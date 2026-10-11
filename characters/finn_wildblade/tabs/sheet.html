@@ -5,8 +5,8 @@
 
       <div class="combat-grid">
         <div class="combat-stat"><span class="label">Proficiency</span><strong><span class="shield">+4</span></strong></div>
-        <div class="combat-stat"><span class="label">Armor class</span><strong><span class="shield">15</span></strong></div>
-        <div class="combat-stat"><span class="label">Initiative</span><strong>+4</strong></div>
+        <div class="combat-stat"><span class="label">Armor class</span><strong><span class="shield">16</span></strong></div>
+        <div class="combat-stat"><span class="label">Initiative</span><strong>+5</strong></div>
         <div class="combat-stat"><span class="label">Speed</span><strong>40</strong><small></small></div>
       </div>
       <div class="hp-row">
@@ -24,13 +24,27 @@
       <table class="record-table compact-table" aria-label="Recorded attacks with corrected critical attack bonus">
         <thead><tr><th scope="col">Attack</th><th scope="col">Bonus</th><th scope="col">Damage</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Dagger</th><td>+8</td><td>1d4+4 Piercing</td></tr>
-          <tr><th scope="row">Critical Hit Dagger <span class="badge gold">Conditional</span></th><td>+8</td><td>9d4+4</td></tr>
-          <tr><th scope="row">Dagger Off Hand</th><td>+8</td><td>1d4</td></tr>
+          <tr title="Attack bonus: proficiency +4 + Dexterity +5 = +9. Damage: 1d6 + Dexterity +5 + Fell-Handed +2 (half proficiency bonus, rounded down) = 1d6+7. No Rage bonus (Rage only applies to Strength-based melee attacks).">
+            <th scope="row">Shortsword <span class="badge gold">Dual wield</span></th><td>+9</td><td>1d6+7 Piercing</td>
+          </tr>
+          <tr title="Critical hit: base shortsword die doubled (2d6) + Brutal Critical (+1d6) + Piercer (+1d6) + Fury (+1d6) + Low Blow (+4d4 against a larger creature). Flat modifiers Dexterity +5 and Fell-Handed +2 are not doubled => +7. Total 5d6+4d4+7.">
+            <th scope="row">Critical Hit Shortsword <span class="badge gold">Conditional</span></th><td>+9</td><td>5d6+4d4+7</td>
+          </tr>
+          <tr title="Off-hand bonus-action attack. Attack bonus: proficiency +4 + Dexterity +5 = +9. Damage: 1d6 + Fell-Handed +2 (no ability modifier on the off-hand attack) = 1d6+2.">
+            <th scope="row">Shortsword Off Hand</th><td>+9</td><td>1d6+2 Piercing</td>
+          </tr>
+          <tr><th scope="row">Dagger</th><td>+9</td><td>1d4+5 Piercing</td></tr>
+          <tr><th scope="row">Critical Hit Dagger <span class="badge gold">Conditional</span></th><td>+9</td><td>9d4+5</td></tr>
+          <tr><th scope="row">Dagger Off Hand</th><td>+9</td><td>1d4</td></tr>
         </tbody>
       </table>
       <details>
         <summary>Description &amp; information</summary>
+        <p class="note"><strong>Attack bonus:</strong> proficiency +4 + Dexterity +5 = +9.</p>
+        <p class="note"><strong>Critical hit damage dice:</strong> double the weapon's damage dice + Brutal Critical (level 9, +1 die) + Piercer (extra weapon damage die on a piercing critical) + Fury (halfling, roll one weapon damage die again on a melee critical) + Low Blow (halfling, +1d4 per proficiency bonus = +4d4 against a larger creature). Flat modifiers (Dexterity +5 and Fell-Handed +2) are added once and are not doubled.</p>
+        <p class="note"><strong>Dagger (1d4):</strong> 2d4 + 1d4 + 1d4 + 1d4 + 4d4 = 9d4, plus Dexterity +5 = 9d4+5.</p>
+        <p class="note"><strong>Shortsword (1d6):</strong> 2d6 + 1d6 + 1d6 + 1d6 = 5d6, plus 4d4 from Low Blow, plus Dexterity +5 and Fell-Handed +2 = 5d6+4d4+7.</p>
+        <p class="note">Critical rows are conditional (Low Blow needs a target larger than Finn; the crit features trigger on a melee critical hit). Off-hand attacks use a bonus action and add no ability modifier to damage, but still gain Fell-Handed.</p>
       </details>
     </section>
 
@@ -103,12 +117,6 @@
         </li>
         <li data-category="class">
           <details>
-            <summary>Save <span class="badge">Class ability</span></summary>
-            <p class="note">Recorded feature referencing saving throw proficiencies (Strength and Constitution) granted by the barbarian class.</p>
-          </details>
-        </li>
-        <li data-category="class">
-          <details>
             <summary>Unarmored Defense <span class="badge">Class ability</span></summary>
             <p class="note">While not wearing armor, your AC equals 10 + Dexterity modifier + Constitution modifier. You can use a shield and still gain this benefit.</p>
           </details>
@@ -123,6 +131,17 @@
           <details>
             <summary>Fast Movement <span class="badge">Class ability</span></summary>
             <p class="note">Your speed increases by 10 feet while you are not wearing heavy armor.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Stance of the Beast <span class="badge">Class ability (Subclass)</span></summary>
+            <p class="note">Path of the Beast level 3 feature (replaces Form of the Beast). Starting when you choose this path, when you enter your rage you can assume one of the fighting stances below for the duration; you choose the stance each time you rage:</p>
+            <ul>
+              <li><strong>Lion Stance.</strong> You take the stance of an apex predator. Once on each of your turns when you damage a creature with a melee weapon, you gain temporary hit points equal to your proficiency bonus, provided you have less than half your hit points when you hit.</li>
+              <li><strong>Falcon Stance.</strong> You take a stance based on an agile hunter. Once on each of your turns when you attack with a melee weapon with the light property using the Attack action, you can make one additional attack with that weapon as part of the same action.</li>
+              <li><strong>Serpent Stance.</strong> You take the stance of a swaying serpent. If a creature you can see within reach of a melee weapon you are wielding hits you with an attack roll, you can use your reaction to swipe your weapon and roll a d8, applying a bonus to your AC equal to the number rolled, potentially causing the attack to miss you.</li>
+            </ul>
           </details>
         </li>
         <li data-category="class">
@@ -155,6 +174,18 @@
             <p class="note">When wielding a finesse weapon with proficiency, use your reaction to add your proficiency bonus to your AC against a melee attack.</p>
           </details>
         </li>
+        <li data-category="general">
+          <details>
+            <summary>Fell-Handed <span class="badge gold">General feat</span></summary>
+            <p class="note">Prerequisite: 6th level or higher. Raise the damage of all of your successful melee attacks by half your proficiency bonus, rounded down (+2 at proficiency +4).</p>
+          </details>
+        </li>
+        <li data-category="general">
+          <details>
+            <summary>Skill Expert <span class="badge gold">General feat</span></summary>
+            <p class="note">Increase one ability score of your choice by 1 (to a max of 20). You gain proficiency in one skill of your choice, and choose one skill you are proficient in to gain expertise (double proficiency bonus) with it. Selected here: proficiency in Deception, expertise in Intimidation.</p>
+          </details>
+        </li>
         <li data-category="cultural">
           <details>
             <summary>Squat Nimbleness <span class="badge gold">Cultural feat</span></summary>
@@ -165,6 +196,18 @@
           <details>
             <summary>Low Blow <span class="badge gold">Cultural feat</span></summary>
             <p class="note">Halfling campaign feat. When attacking a larger creature than yourself, cause extra 1d4 damage per proficiency bonus on any critical hit (+4d4 at proficiency +4).</p>
+          </details>
+        </li>
+        <li data-category="cultural">
+          <details>
+            <summary>Horde Charge <span class="badge gold">Cultural feat</span></summary>
+            <p class="note">Prerequisite: halfling. If an ally moves into melee range with an enemy, you gain advantage on attack rolls against that same enemy until your ally takes its next turn.</p>
+          </details>
+        </li>
+        <li data-category="cultural">
+          <details>
+            <summary>Second Chance <span class="badge gold">Cultural feat</span></summary>
+            <p class="note">Prerequisite: halfling. When a creature you can see hits you with an attack roll, you can use your reaction to force that creature to reroll. You can only use this ability once per creature per encounter.</p>
           </details>
         </li>
         <li data-category="class">
@@ -182,7 +225,7 @@
       <h2 class="section-title" id="ability-heading"><span class="ornament" aria-hidden="true">◇</span> Ability scores</h2>
       <div class="ability-grid">
         <div class="ability"><span class="label"><abbr title="Strength">STR</abbr></span><span class="modifier" aria-label="Strength modifier plus zero">+0</span><span class="score">10</span></div>
-        <div class="ability"><span class="label"><abbr title="Dexterity">DEX</abbr></span><span class="modifier" aria-label="Dexterity modifier plus four">+4</span><span class="score">18</span></div>
+        <div class="ability"><span class="label"><abbr title="Dexterity">DEX</abbr></span><span class="modifier" aria-label="Dexterity modifier plus five">+5</span><span class="score">20</span></div>
         <div class="ability"><span class="label"><abbr title="Constitution">CON</abbr></span><span class="modifier" aria-label="Constitution modifier plus one">+1</span><span class="score">12</span></div>
         <div class="ability"><span class="label"><abbr title="Intelligence">INT</abbr></span><span class="modifier" aria-label="Intelligence modifier minus one">−1</span><span class="score">8</span></div>
         <div class="ability"><span class="label"><abbr title="Wisdom">WIS</abbr></span><span class="modifier" aria-label="Wisdom modifier plus one">+1</span><span class="score">13</span></div>
@@ -194,7 +237,7 @@
       <h2 class="section-title" id="saves-heading">Saving throws</h2>
       <table class="rows compact-table" aria-label="Saving throw bonuses"><tbody>
         <tr><td>+4</td><td>Strength</td><td aria-label="Proficient">✓</td></tr>
-        <tr><td>+4</td><td>Dexterity</td><td>DEX</td></tr>
+        <tr><td>+5</td><td>Dexterity</td><td>DEX</td></tr>
         <tr><td>+5</td><td>Constitution</td><td aria-label="Proficient">✓</td></tr>
         <tr><td>−1</td><td>Intelligence</td><td>INT</td></tr>
         <tr><td>+1</td><td>Wisdom</td><td>WIS</td></tr>
@@ -205,14 +248,14 @@
     <section class="box" aria-labelledby="skills-heading">
       <h2 class="section-title" id="skills-heading">Skills</h2>
       <table class="rows compact-table" aria-label="Skill bonuses and recorded proficiencies"><tbody>
-        <tr><td>+8</td><td>Acrobatics</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+9</td><td>Acrobatics</td><td aria-label="Proficient">✓</td></tr>
         <tr><td>+1</td><td>Animal Handling</td><td>WIS</td></tr>
         <tr><td>−1</td><td>Arcana</td><td>INT</td></tr>
         <tr><td>+0</td><td>Athletics</td><td>STR</td></tr>
-        <tr><td>+2</td><td>Deception</td><td>CHA</td></tr>
+        <tr><td>+6</td><td>Deception</td><td aria-label="Proficient">✓</td></tr>
         <tr><td>−1</td><td>History</td><td>INT</td></tr>
         <tr><td>+1</td><td>Insight</td><td>WIS</td></tr>
-        <tr><td>+6</td><td>Intimidation</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+10</td><td>Intimidation</td><td aria-label="Expertise">✓✓</td></tr>
         <tr><td>−1</td><td>Investigation</td><td>INT</td></tr>
         <tr><td>+1</td><td>Medicine</td><td>WIS</td></tr>
         <tr><td>−1</td><td>Nature</td><td>INT</td></tr>
@@ -220,11 +263,11 @@
         <tr><td>+2</td><td>Performance</td><td>CHA</td></tr>
         <tr><td>+6</td><td>Persuasion</td><td aria-label="Proficient">✓</td></tr>
         <tr><td>−1</td><td>Religion</td><td>INT</td></tr>
-        <tr><td>+4</td><td>Sleight of Hand</td><td>DEX</td></tr>
-        <tr><td>+8</td><td>Stealth</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+5</td><td>Sleight of Hand</td><td>DEX</td></tr>
+        <tr><td>+9</td><td>Stealth</td><td aria-label="Proficient">✓</td></tr>
         <tr><td>+5</td><td>Survival</td><td aria-label="Proficient">✓</td></tr>
       </tbody></table>
-      <p class="note">✓ marks the six skill proficiencies shown on the screenshot. Their recorded bonuses include proficiency; other rows use ability modifiers.</p>
+      <p class="note">✓ marks skill proficiencies (their recorded bonuses include proficiency); ✓✓ marks expertise (doubled proficiency bonus). Other rows use ability modifiers.</p>
     </section>
   </div>
 </div>

@@ -45,8 +45,7 @@ Danger Sense
 At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated.
 Primal Path
 At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior (detailed in the player's handbook). Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels.
-Ability Score Improvement
-When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.
+
 Extra Attack
 Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.
 Fast Movement
