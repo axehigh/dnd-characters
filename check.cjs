@@ -1,12 +1,20 @@
 // Dependency-free smoke check: node check.cjs (not a substitute for browser QA).
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
+const path = require("node:path");
 const vm = require("node:vm");
-const html = fs.readFileSync(require("node:path").join(__dirname, "index.html"), "utf8");
-const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+const html = fs.readFileSync(path.join(__dirname, "characters", "finn_wildblade", "finn_wildblade.html"), "utf8");
+const tabFiles = ["sheet.html", "inventory.html", "barbarian.html", "halfling.html", "story.html", "images.html"];
+let allHtml = html;
+for (const file of tabFiles) {
+  allHtml += "\n" + fs.readFileSync(path.join(__dirname, "characters", "finn_wildblade", "tabs", file), "utf8");
+}
+const ids = [...allHtml.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 assert.equal(new Set(ids).size, ids.length, "HTML IDs must be unique");
-for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(id), `Missing anchor: ${id}`);
-assert.ok(html.includes('<progress value="20" max="95"'), "Recorded HP must be preserved");
+for (const [, id] of allHtml.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(id), `Missing anchor: ${id}`);
+assert.ok(allHtml.includes('<div class="hp-total">95</div>'), "Recorded HP must be preserved");
+assert.ok(allHtml.includes('id="feature-search"'), "Feature search input must be present");
+assert.ok(allHtml.includes('data-filter="class"'), "Feature category filters must be present");
 
 const elements = new Map();
 function element(id) {
@@ -26,7 +34,7 @@ const tabs = [...html.matchAll(/<a class="tab" href="(#\w+)">/g)].map(([, href])
   elements.set(href, element(href.slice(1)));
   return tab;
 });
-assert.equal(tabs.length, 3);
+assert.equal(tabs.length, 6);
 const location = { hash: "" };
 const events = {};
 const context = {
@@ -49,9 +57,18 @@ function selected(index) {
 selected(0);
 tabs[1].click();
 selected(1);
-assert.equal(location.hash, "#info");
-tabs[1].events.keydown({ key: "ArrowRight", preventDefault() {} });
+assert.equal(location.hash, "#inventory");
+tabs[2].click();
 selected(2);
+assert.equal(location.hash, "#barbarian");
+tabs[3].click();
+selected(3);
+assert.equal(location.hash, "#halfling");
+tabs[4].click();
+selected(4);
+assert.equal(location.hash, "#story");
+tabs[4].events.keydown({ key: "ArrowRight", preventDefault() {} });
+selected(5);
 location.hash = "#sheet";
 events.popstate();
 selected(0);

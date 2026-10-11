@@ -4,15 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17191f">
-  <meta name="description" content="Finn Wildblade's character sheet: a level 9 halfling barbarian, with clearly labeled rules references and campaign notes.">
-  <title>Finn Wildblade · Character Sheet</title>
+  <meta name="description" content="The Adventurer's Ledger: character records and campaign notes.">
+  <title>Characters · The Adventurer’s Ledger</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to character sheet</a>
   <div class="masthead">
     <div class="brand"><span aria-hidden="true">✧</span> The Adventurer’s Ledger</div>
-    <a href="#info">Notes &amp; sources ↗</a>
   </div>
   <main class="ledger" id="main">
     <header class="identity">
@@ -25,302 +23,22 @@
         <path d="m40 42 5 6-5 7-5-7Z" fill="currentColor"/>
       </svg>
       <div class="identity-text">
-        <div class="eyebrow">Character record</div>
-        <h1>Finn Wildblade</h1>
-        <p class="subtitle">Halfling <span class="badge gold">Barbarian</span> <span class="badge">Path of the Beast</span></p>
+        <div class="eyebrow">Directory</div>
+        <h1>Characters</h1>
+        <p class="subtitle">Registered adventurers and records</p>
       </div>
-      <div class="level"><span class="label">Level</span><strong>9</strong></div>
     </header>
 
-    <nav class="tabs" aria-label="Character sections">
-      <a class="tab" href="#sheet">Character sheet</a>
-      <a class="tab" href="#info">Bio &amp; info</a>
-      <a class="tab" href="#abilities">Attributes &amp; abilities</a>
-    </nav>
-
-    <section id="sheet" aria-label="Character sheet">
+    <section aria-label="Character list" style="margin-top: 24px;">
       <div class="sheet-grid">
-        <div class="column wide">
-          <section aria-labelledby="ability-heading">
-            <h2 class="section-title" id="ability-heading"><span class="ornament" aria-hidden="true">◇</span> Ability scores</h2>
-            <div class="ability-grid">
-              <div class="ability"><span class="label"><abbr title="Strength">STR</abbr></span><strong>10</strong><span class="modifier" aria-label="Strength modifier plus zero">+0</span></div>
-              <div class="ability"><span class="label"><abbr title="Dexterity">DEX</abbr></span><strong>18</strong><span class="modifier" aria-label="Dexterity modifier plus four">+4</span></div>
-              <div class="ability"><span class="label"><abbr title="Constitution">CON</abbr></span><strong>12</strong><span class="modifier" aria-label="Constitution modifier plus one">+1</span></div>
-              <div class="ability"><span class="label"><abbr title="Intelligence">INT</abbr></span><strong>8</strong><span class="modifier" aria-label="Intelligence modifier minus one">−1</span></div>
-              <div class="ability"><span class="label"><abbr title="Wisdom">WIS</abbr></span><strong>13</strong><span class="modifier" aria-label="Wisdom modifier plus one">+1</span></div>
-              <div class="ability"><span class="label"><abbr title="Charisma">CHA</abbr></span><strong>15</strong><span class="modifier" aria-label="Charisma modifier plus two">+2</span></div>
-            </div>
-          </section>
-          <div class="box proficiency"><strong>+4</strong><span class="label">Proficiency bonus</span></div>
-        </div>
-
-        <section class="box column" aria-labelledby="combat-heading">
-          <h2 class="section-title" id="combat-heading"><span class="ornament" aria-hidden="true">◇</span> Combat</h2>
-          <div class="combat-grid">
-            <div class="combat-stat"><span class="label">Armor class</span><strong><span class="shield">15</span></strong></div>
-            <div class="combat-stat"><span class="label">Initiative</span><strong>+4</strong><small>bonus</small></div>
-            <div class="combat-stat"><span class="label">Speed</span><strong>40</strong><small>feet</small></div>
-          </div>
-          <section class="hit-points" aria-labelledby="hp-heading">
-            <h2 class="label" id="hp-heading">Hit points</h2>
-            <div class="hp-total">20 <span>/ 95</span></div>
-            <progress value="20" max="95" aria-label="Current hit points: 20 of 95">20 of 95</progress>
-            <div class="hp-meta"><span>Current / maximum</span><span>Temporary HP: unknown</span></div>
-          </section>
-          <div class="pair">
-            <section class="box"><h2 class="label">Hit dice</h2><strong>9 d12</strong><p class="note">Remaining dice unknown</p></section>
-            <section class="box"><h2 class="label">Rage reference</h2><strong>4 / long rest</strong><p class="note">Standard level 9; uses left unknown</p></section>
-          </div>
-          <section aria-labelledby="battle-heading">
-            <h2 class="section-title" id="battle-heading">In the heat of battle</h2>
-            <p class="combat-note"><strong>Rage damage · <span class="bonus">+3</span></strong>Standard 2014 rule: applies to melee weapon attacks using <em>Strength</em>, not Dexterity. Reckless Attack also requires Strength.</p>
-          </section>
-        </section>
-
-          <section class="box attacks" aria-labelledby="attacks-heading">
-            <h2 class="section-title" id="attacks-heading">Attacks &amp; equipment</h2>
-            <table class="record-table" aria-label="Recorded attacks with corrected critical attack bonus">
-              <thead><tr><th scope="col">Attack</th><th scope="col">Bonus</th><th scope="col">Damage</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">Dagger</th><td>+8</td><td>1d4+4 Piercing</td></tr>
-                <tr><th scope="row">Critical Hit Dagger <span class="badge gold">Conditional</span></th><td>+8</td><td>9d4+4</td></tr>
-                <tr><th scope="row">Dagger Off Hand</th><td>+8</td><td>1d4+4</td></tr>
-              </tbody>
-            </table>
-            <details>
-              <summary>Description &amp; information</summary>
-              <p class="note">Critical attack bonus corrected to <span class="bonus">+8</span> (DEX +4, proficiency +4); the screenshot shows +4. A critical hit does not reduce the attack bonus. Other attack entries remain as recorded, including off-hand damage; its supporting rules are unconfirmed.</p>
-              <p class="note"><strong>Baseline melee dagger critical: 3d4+4</strong> with level 9 Brutal Critical: 2d4 weapon dice + 1d4 Brutal Critical + 4 DEX. Without Brutal Critical, the ordinary dagger critical is 2d4+4.</p>
-              <p class="note"><strong>9d4+4 is conditional:</strong> 2d4 weapon dice + 1d4 Brutal Critical + 1d4 local halfling Fury + 1d4 Piercer + <span class="bonus">4d4 Low Blow</span>, then +4 DEX. All four additions must apply to this melee piercing critical against a creature larger than Finn. Fury and the Piercer interpretation of the recorded “Pierce” need DM confirmation; feature names alone do not establish these mechanics. Low Blow’s extra dice are granted on the critical, not doubled again.</p>
-            </details>
-          </section>
-          <section class="box" aria-labelledby="saves-heading">
-            <h2 class="section-title" id="saves-heading">Saving throws</h2>
-            <table class="rows" aria-label="Saving throw bonuses"><tbody>
-              <tr><td>+4</td><td>Strength</td><td aria-label="Proficient">✓</td></tr>
-              <tr><td>+4</td><td>Dexterity</td><td>DEX</td></tr>
-              <tr><td>+5</td><td>Constitution</td><td aria-label="Proficient">✓</td></tr>
-              <tr><td>−1</td><td>Intelligence</td><td>INT</td></tr>
-              <tr><td>+1</td><td>Wisdom</td><td>WIS</td></tr>
-              <tr><td>+2</td><td>Charisma</td><td>CHA</td></tr>
-            </tbody></table>
-          </section>
-          <section class="box" aria-labelledby="skills-heading">
-            <h2 class="section-title" id="skills-heading">Skills</h2>
-            <table class="rows" aria-label="Skill bonuses and recorded proficiencies"><tbody>
-              <tr><td>+8</td><td>Acrobatics</td><td aria-label="Proficient">✓</td></tr>
-              <tr><td>+1</td><td>Animal Handling</td><td>WIS</td></tr>
-              <tr><td>−1</td><td>Arcana</td><td>INT</td></tr>
-              <tr><td>+0</td><td>Athletics</td><td>STR</td></tr>
-              <tr><td>+2</td><td>Deception</td><td>CHA</td></tr>
-              <tr><td>−1</td><td>History</td><td>INT</td></tr>
-              <tr><td>+1</td><td>Insight</td><td>WIS</td></tr>
-              <tr><td>+6</td><td>Intimidation</td><td aria-label="Proficient">✓</td></tr>
-              <tr><td>−1</td><td>Investigation</td><td>INT</td></tr>
-              <tr><td>+1</td><td>Medicine</td><td>WIS</td></tr>
-              <tr><td>−1</td><td>Nature</td><td>INT</td></tr>
-              <tr><td>+5</td><td>Perception</td><td aria-label="Proficient">✓</td></tr>
-              <tr><td>+2</td><td>Performance</td><td>CHA</td></tr>
-              <tr><td>+6</td><td>Persuasion</td><td aria-label="Proficient">✓</td></tr>
-              <tr><td>−1</td><td>Religion</td><td>INT</td></tr>
-              <tr><td>+4</td><td>Sleight of Hand</td><td>DEX</td></tr>
-              <tr><td>+8</td><td>Stealth</td><td aria-label="Proficient">✓</td></tr>
-              <tr><td>+5</td><td>Survival</td><td aria-label="Proficient">✓</td></tr>
-            </tbody></table>
-            <p class="note">✓ marks the six skill proficiencies shown on the screenshot. Their recorded bonuses include proficiency; other rows use ability modifiers.</p>
-          </section>
-          <section class="box" aria-labelledby="inventory-heading">
-            <h2 class="section-title" id="inventory-heading">Inventory</h2>
-            <table class="record-table" aria-label="Inventory recorded on the screenshot">
-              <thead><tr><th scope="col">Item</th><th scope="col">Quantity</th><th scope="col">Weight</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">Backpack</th><td>1</td><td>5</td></tr>
-                <tr><th scope="row">Bedroll</th><td>1</td><td>7</td></tr>
-                <tr><th scope="row">Mess kit</th><td>1</td><td>0.5</td></tr>
-                <tr><th scope="row">Rope hemp</th><td>1</td><td>10</td></tr>
-                <tr><th scope="row">Waterskin</th><td>1</td><td>1</td></tr>
-                <tr><th scope="row">Dagger</th><td>2</td><td>1</td></tr>
-                <tr><th scope="row">Tinderbox</th><td>1</td><td>0</td></tr>
-                <tr><th scope="row">Rations</th><td>10</td><td>1</td></tr>
-              </tbody>
-              <tfoot><tr><th scope="row" colspan="2">Total weight (as shown)</th><td>35</td></tr></tfoot>
-            </table>
-            <p class="note">Weights and total are transcribed as displayed, not recalculated.</p>
-          </section>
-          <section class="box" aria-labelledby="observations-heading">
-            <h2 class="section-title" id="observations-heading">Sheet notes</h2>
-            <p class="note">AC 15 matches unarmored defense (10 + DEX 4 + CON 1)</p>
-          </section>
-
-        <aside class="column features-column" aria-label="Recorded features and rules references">
-          <section class="box" aria-labelledby="recorded-features-heading">
-            <h2 class="section-title" id="recorded-features-heading">Recorded features</h2>
-            <ul class="recorded-list">
-              <li>Rage</li>
-              <li>Lucky</li>
-              <li>Critical Resistance</li>
-              <li>Lucky Damage</li>
-              <li>Space</li>
-              <li>Save</li>
-              <li>Unarmored Defense</li>
-              <li>Extra Attack</li>
-              <li>Fast Movement</li>
-              <li>Path Feature (Beast)</li>
-              <li>Feral Instincts</li>
-              <li>Brutal Critical (1 Die)</li>
-              <li>Pierce</li>
-              <li>Defensive Duelist</li>
-              <li>Squat Nimbleness</li>
-              <li>Low Blow</li>
-              <li>Danger Sense</li>
-            </ul>
-            <p class="note">The class reference below and official/campaign comparisons in Attributes &amp; abilities are separate from this recorded list. Unknown names are not mapped to campaign rules without confirmation.</p>
-          </section>
-          <section class="box" aria-labelledby="features-heading">
-            <h2 class="section-title" id="features-heading">Class rules reference</h2>
-            <p class="note" style="margin:0 0 14px">Standard 2014 reference · descriptions may differ from campaign rules</p>
-            <div class="feature"><h3>Rage</h3><p>Bonus action. Resist bludgeoning, piercing, and slashing damage while raging without heavy armor.</p></div>
-            <div class="feature"><h3>Unarmored Defense</h3><p>AC = 10 + Dexterity + Constitution when not wearing armor; a shield is allowed.</p></div>
-            <div class="feature"><h3>Reckless Attack</h3><p>Advantage on Strength-based melee weapon attacks; attacks against you gain advantage until your next turn.</p></div>
-            <div class="feature"><h3>Danger Sense</h3><p>Advantage on Dexterity saves against effects you can see, subject to condition restrictions.</p></div>
-            <div class="feature"><h3>Extra Attack</h3><p>Attack twice when you take the Attack action.</p></div>
-            <div class="feature"><h3>Fast Movement</h3><p><span class="bonus">+10 ft</span> speed while not wearing heavy armor.</p></div>
-            <div class="feature"><h3>Feral Instinct</h3><p>Advantage on initiative; rage can let you act when surprised, with restrictions.</p></div>
-            <div class="feature"><h3>Brutal Critical</h3><p>One additional weapon damage die on a melee critical hit at level 9 <span class="bonus">(+1d4 for a dagger)</span>.</p></div>
-            <p class="note"><a href="https://www.dndbeyond.com/classes/9-barbarian">Read the full barbarian rules ↗</a></p>
-          </section>
-          <section class="box" aria-labelledby="feats-heading">
-            <h2 class="section-title" id="feats-heading">Feats <span class="badge gold">Recorded &amp; conditional</span></h2>
-            <p class="note" style="margin:0 0 14px">Recorded names are retained. Only Low Blow is matched to the local document here; other mechanics need confirmation.</p>
-            <div class="feature"><h3><span class="badge green">Low Blow</span></h3><div><p><strong>Prerequisite:</strong> halfling.</p><p><strong>Benefit (verbatim):</strong> “When attacking a larger creature than yourself you cause and extra 1d4 extra damage per proficiency bonus on any critical hit.”</p><p>At Finn’s proficiency <span class="bonus">+4</span>: <span class="bonus">+4d4</span> damage on a critical hit against a larger creature only. Local campaign feat recorded on the screenshot; confirm the draft’s mechanics with the DM.</p><p class="note"><a href="D%26D%26E_arbeidsfil.docx" download>Source: original campaign document · Low blow ↓</a></p></div></div>
-            <div class="feature"><h3><span class="badge">Pierce</span></h3><p>Name as recorded; not automatically the published Piercer feat. If the DM confirms Piercer, it adds one weapon damage die on a piercing critical hit (<span class="bonus">+1d4</span> for a dagger). This is one of the conditions for 9d4+4 above.</p></div>
-            <div class="feature"><h3><span class="badge">Defensive Duelist</span></h3><p>Recorded on the screenshot. Campaign wording and application are not supplied.</p></div>
-            <div class="feature"><h3><span class="badge">Squat Nimbleness</span></h3><p>Recorded on the screenshot. Selected benefits and their contribution to Finn’s totals are not confirmed.</p></div>
-          </section>
-        </aside>
-      </div>
-    </section>
-
-    <section id="info" aria-label="Biography, character information and sources">
-      <div class="info-grid">
         <section class="box">
-          <h2 class="section-title">The character</h2>
-          <h3>Finn Wildblade</h3>
-          <dl class="facts"><div><dt>Ancestry</dt><dd>Halfling</dd></div><div><dt>Class</dt><dd>Barbarian · level 9</dd></div><div><dt>Subclass</dt><dd>Path of the Beast</dd></div><div><dt>Background</dt><dd>Not provided</dd></div><div><dt>Alignment</dt><dd>Not provided</dd></div><div><dt>Halfling subrace</dt><dd>Not confirmed</dd></div></dl>
-        </section>
-        <section class="box">
-          <h2 class="section-title">Biography</h2>
-          <h3>A story still to be recorded.</h3>
-          <p>No biography was supplied. Finn’s origins, appearance, personality, ideals, bonds, and flaws are intentionally left unspecified.</p>
-        </section>
-        <section class="wide notice" aria-label="Data provenance">
-          <strong>What is confirmed?</strong> The supplied screenshot transcription gives Finn’s name, class, ancestry, subclass, level, six ability scores, AC, initiative, speed, proficiency, HP, hit dice, six checkmarked skill proficiencies, Strength and Constitution save proficiencies, three attack entries, inventory quantities and weights, and the recorded feature names. Feature names alone do not establish their mechanics. The local document is a general campaign rules draft, not a character record, and does not establish which rules Finn uses.
-        </section>
-        <section class="box">
-          <h2 class="section-title">Official rules &amp; references</h2>
-          <ul>
-            <li><a href="https://www.dndbeyond.com/classes/9-barbarian">Barbarian · 2014 legacy class</a><br><span class="note">D&amp;D Beyond. Class table, rage, saving throws, and level 9 features.</span></li>
-            <li><a href="https://www.dndbeyond.com/sources/dnd/basic-rules-2014/races#Halfling">Halfling · 2014 Basic Rules</a><br><span class="note">D&amp;D Beyond. Standard ancestry traits and subraces, not the local campaign’s modifications.</span></li>
-            <li><a href="https://www.dndbeyond.com/posts/915-barbarian-101-path-of-the-beast-from-tashas">Path of the Beast · official subclass guide</a><br><span class="note">D&amp;D Beyond editorial guide to the subclass in Tasha’s Cauldron of Everything; a summary rather than complete rules.</span></li>
-            <li><a href="https://www.dndbeyond.com/sources/dnd/tcoe/barbarian#PathoftheBeast">Tasha’s Cauldron of Everything · subclass rules</a><br><span class="note">Full published rules may require sign-in and book access, or redirect to the marketplace.</span></li>
-          </ul>
-          <p class="note">References use the 2014 fifth-edition rules. The revised 2024 class and species rules are not silently mixed into this sheet.</p>
-        </section>
-        <section class="box">
-          <h2 class="section-title">Local campaign document</h2>
-          <h3>D&amp;D&amp;E_arbeidsfil.docx</h3>
-          <p>The supplied working document contains alternate character advancement, modified halfling traits, and a modified Path of the Beast. These are campaign options, not verified Finn features.</p>
-          <p><a href="D%26D%26E_arbeidsfil.docx" download>Download the original working document ↓</a></p>
-          <p class="note">Relevant headings: “Halflings,” “Barbarian,” and “Path of the Beast.” Check with the DM before using these changes.</p>
-        </section>
-      </div>
-    </section>
-
-    <section id="abilities" aria-label="Attributes and abilities reference">
-      <div class="info-grid">
-        <div class="wide notice"><strong>Reference, not a rules selection.</strong> Finn’s subclass is known, but the official and local versions differ. Both are separated below; neither is automatically assigned to this character.</div>
-        <section class="box">
-          <h2 class="section-title">Official · Path of the Beast</h2>
-          <span class="badge">Tasha’s Cauldron of Everything</span>
-          <details open><summary>Level 3 · Form of the Beast</summary><p>When raging, choose a bite, claws, or tail as a natural weapon. These use Strength, so Dexterity 18 does not automatically grant a +4 attack or damage bonus.</p><p>The bite can restore HP while below half health; claws can grant an additional claw attack; the tail offers reach and a reaction to increase AC against a triggering attack. See the published rules for exact conditions.</p></details>
-          <details open><summary>Level 6 · Bestial Soul</summary><p>The natural weapons count as magical for overcoming resistance and immunity to nonmagical attacks and damage. After a short or long rest, choose a swimming, climbing, or enhanced-jumping adaptation.</p></details>
-          <p class="note">The level 10 and 14 features are not available to a level 9 barbarian. Optional class features are not assumed.</p>
-          <p><a href="https://www.dndbeyond.com/posts/915-barbarian-101-path-of-the-beast-from-tashas">Official subclass overview ↗</a></p>
-        </section>
-        <section class="box">
-          <h2 class="section-title">Local · Path of the Beast</h2>
-          <span class="badge">Campaign draft · unconfirmed for Finn</span>
-          <details open><summary>Level 3 · Stance of the Beast</summary><p>Replaces Form of the Beast. Choose a stance each time you enter rage.</p><p><strong>Lion:</strong> once on each of your turns, a melee weapon hit grants temporary HP equal to proficiency if you have less than half your HP.</p><p><strong>Falcon:</strong> once on each of your turns, attacking with a light melee weapon using the Attack action allows one additional attack with that weapon in the same action.</p><p><strong>Serpent:</strong> when a visible creature within your melee weapon’s reach hits you, use a reaction to add 1d8 to AC against that attack, potentially turning it into a miss.</p></details>
-          <details open><summary>Level 6 · Bestial Strength</summary><p>Replaces Bestial Soul. Choose a swim or climb speed equal to walking speed. Once per turn, a Strength (Athletics) check can extend a jump by the check’s total in feet.</p></details>
-          <p class="note">Summarized from the local document. Finn’s stance and movement choice are not known.</p>
-        </section>
-        <section class="box">
-          <h2 class="section-title">Official · Halfling</h2>
-          <p>Standard 2014 halflings are Small, have a 25 ft base walking speed, and have the following ancestry traits:</p>
-          <details open><summary>Lucky</summary><p>Reroll a 1 on a d20 attack roll, ability check, or saving throw; use the new roll.</p></details>
-          <details><summary>Brave</summary><p>Advantage on saving throws against being frightened.</p></details>
-          <details><summary>Halfling Nimbleness</summary><p>Move through the space of a creature larger than you.</p></details>
-          <p class="note">Subrace traits, languages, and ancestry score bonuses are not assigned here. Finn’s recorded ability scores are already kept as totals.</p>
-          <p><a href="https://www.dndbeyond.com/sources/dnd/basic-rules-2014/races#Halfling">Official halfling reference ↗</a></p>
-        </section>
-        <section class="box">
-          <h2 class="section-title">Local · Halfling</h2>
-          <span class="badge">Campaign draft · unconfirmed for Finn</span>
-          <p>The local ancestry changes include +1 Dexterity and Charisma, one skill choice, Lucky, Brave, and “Tiny” movement through larger creatures’ spaces.</p>
-          <details open><summary>Additional campaign traits</summary><p><strong>Fury:</strong> one additional weapon damage die on a melee critical hit.</p><p><strong>Full of life:</strong> resistance to necrotic and radiant damage.</p><p><strong>Vengeance:</strong> after damaging a larger creature with an attack, add damage equal to character level; once per short or long rest.</p></details>
-          <p class="note">These extra traits are not standard 2014 halfling rules. Do not stack them onto the official version without DM confirmation.</p>
+          <div class="eyebrow">Level 9 · Halfling Barbarian</div>
+          <h2 style="margin: 4px 0 8px; font-size: 20px;"><a href="characters/finn_wildblade/finn_wildblade.html">Finn Wildblade</a></h2>
+          <p class="note" style="margin: 0;">Path of the Beast barbarian with clearly labeled rules references and campaign notes.</p>
         </section>
       </div>
     </section>
   </main>
-  <footer>Finn Wildblade <span aria-hidden="true">◇</span> A character, not just a collection of numbers</footer>
-  <script>
-    // Progressive enhancement: without JavaScript, all sections and anchor links remain usable.
-    const tabs = [...document.querySelectorAll(".tab")];
-    const panels = tabs.map(tab => document.querySelector(tab.getAttribute("href")));
-    const navigation = document.querySelector(".tabs");
-    navigation.setAttribute("role", "tablist");
-    tabs.forEach((tab, index) => {
-      tab.id = "tab-" + panels[index].id;
-      tab.setAttribute("role", "tab");
-      tab.setAttribute("aria-controls", panels[index].id);
-      panels[index].setAttribute("role", "tabpanel");
-      panels[index].setAttribute("aria-labelledby", tab.id);
-      panels[index].tabIndex = 0;
-    });
-    function selectPanel() {
-      const index = panels.findIndex(panel => "#" + panel.id === location.hash);
-      const selected = index === -1 ? 0 : index;
-      tabs.forEach((tab, i) => {
-        tab.setAttribute("aria-selected", String(i === selected));
-        tab.tabIndex = i === selected ? 0 : -1;
-        panels[i].hidden = i !== selected;
-      });
-    }
-    tabs.forEach((tab, index) => {
-      tab.addEventListener("click", event => {
-        event.preventDefault();
-        history.pushState(null, "", tab.getAttribute("href"));
-        selectPanel();
-      });
-      tab.addEventListener("keydown", event => {
-        let next;
-        if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
-        if (event.key === "ArrowLeft") next = (index + tabs.length - 1) % tabs.length;
-        if (event.key === "Home") next = 0;
-        if (event.key === "End") next = tabs.length - 1;
-        if (next !== undefined) {
-          event.preventDefault();
-          tabs[next].focus();
-          tabs[next].click();
-        }
-        if (event.key === " ") { event.preventDefault(); tab.click(); }
-      });
-    });
-    window.addEventListener("hashchange", selectPanel);
-    window.addEventListener("popstate", selectPanel);
-    selectPanel();
-  </script>
+  <footer>The Adventurer’s Ledger <span aria-hidden="true">◇</span> Character Records</footer>
 </body>
 </html>

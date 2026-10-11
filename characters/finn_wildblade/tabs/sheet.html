@@ -1,0 +1,230 @@
+<div class="sheet-grid">
+  <div class="sheet-left">
+    <section class="box column" aria-labelledby="combat-heading">
+      <h2 class="section-title" id="combat-heading"><span class="ornament" aria-hidden="true">◇</span> Combat</h2>
+
+      <div class="combat-grid">
+        <div class="combat-stat"><span class="label">Proficiency</span><strong><span class="shield">+4</span></strong></div>
+        <div class="combat-stat"><span class="label">Armor class</span><strong><span class="shield">15</span></strong></div>
+        <div class="combat-stat"><span class="label">Initiative</span><strong>+4</strong></div>
+        <div class="combat-stat"><span class="label">Speed</span><strong>40</strong><small></small></div>
+      </div>
+      <div class="hp-row">
+        <section class="hit-points" aria-labelledby="hp-heading">
+          <h2 class="label" id="hp-heading">Hit points</h2>
+          <div class="hp-total">95</div>
+        </section>
+        <section class="box compact-box"><h2 class="label">Hit dice</h2><strong>9 d12</strong></section>
+        <section class="box compact-box"><h2 class="label">Rage reference</h2><strong>4 / long rest</strong></section>
+      </div>
+    </section>
+
+    <section class="box attacks" aria-labelledby="attacks-heading">
+      <h2 class="section-title" id="attacks-heading">Attacks &amp; equipment</h2>
+      <table class="record-table compact-table" aria-label="Recorded attacks with corrected critical attack bonus">
+        <thead><tr><th scope="col">Attack</th><th scope="col">Bonus</th><th scope="col">Damage</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Dagger</th><td>+8</td><td>1d4+4 Piercing</td></tr>
+          <tr><th scope="row">Critical Hit Dagger <span class="badge gold">Conditional</span></th><td>+8</td><td>9d4+4</td></tr>
+          <tr><th scope="row">Dagger Off Hand</th><td>+8</td><td>1d4</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>Description &amp; information</summary>
+      </details>
+    </section>
+
+    <section class="box" aria-labelledby="features-list-heading">
+      <h2 class="section-title" id="features-list-heading">Features</h2>
+      <div class="feature-filters">
+        <input type="search" id="feature-search" class="feature-search" placeholder="Search features by name or description..." aria-label="Search features">
+        <div class="filter-buttons" role="group" aria-label="Feature category filters">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="class">Class</button>
+          <button type="button" class="filter-btn" data-filter="racial">Racial</button>
+          <button type="button" class="filter-btn" data-filter="cultural">Cultural</button>
+          <button type="button" class="filter-btn" data-filter="general">General</button>
+        </div>
+      </div>
+      <ul class="recorded-list">
+        <li data-category="class">
+          <details>
+            <summary>Rage <span class="badge">Class ability</span></summary>
+            <p class="note">Bonus action. Resist bludgeoning, piercing, and slashing damage while raging without heavy armor; advantage on Strength checks and saves; melee weapon damage bonus.</p>
+          </details>
+        </li>
+        <li data-category="racial">
+          <details>
+            <summary>Ability Modifiers <span class="badge green">Racial trait</span></summary>
+            <p class="note">+1 to Dexterity and Charisma.</p>
+          </details>
+        </li>
+        <li data-category="racial">
+          <details>
+            <summary>Proficiencies <span class="badge green">Racial trait</span></summary>
+            <p class="note">One of either Nature, Animal Handling, Medicine, Performance, or Persuasion.</p>
+          </details>
+        </li>
+        <li data-category="racial">
+          <details>
+            <summary>Halflings Luck <span class="badge green">Racial trait</span></summary>
+            <p class="note">When you roll a 1 on a d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p>
+          </details>
+        </li>
+        <li data-category="racial">
+          <details>
+            <summary>Brave <span class="badge green">Racial trait</span></summary>
+            <p class="note">You have advantage on saving throws against being frightened.</p>
+          </details>
+        </li>
+        <li data-category="racial">
+          <details>
+            <summary>Tiny <span class="badge green">Racial trait</span></summary>
+            <p class="note">You can move through the space of any creature that is of larger size than yours.</p>
+          </details>
+        </li>
+        <li data-category="racial">
+          <details>
+            <summary>Fury <span class="badge green">Racial trait</span></summary>
+            <p class="note">When you score a critical hit with a melee attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit.</p>
+          </details>
+        </li>
+        <li data-category="racial">
+          <details>
+            <summary>Full of life <span class="badge green">Racial trait</span></summary>
+            <p class="note">You have resistance to necrotic damage and radiant damage.</p>
+          </details>
+        </li>
+        <li data-category="racial">
+          <details>
+            <summary>Vengeance <span class="badge green">Racial trait</span></summary>
+            <p class="note">When you damage a creature with an attack and the creature’s size is larger than yours, you can cause the attack to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can’t use it again until you finish a short or long rest.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Save <span class="badge">Class ability</span></summary>
+            <p class="note">Recorded feature referencing saving throw proficiencies (Strength and Constitution) granted by the barbarian class.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Unarmored Defense <span class="badge">Class ability</span></summary>
+            <p class="note">While not wearing armor, your AC equals 10 + Dexterity modifier + Constitution modifier. You can use a shield and still gain this benefit.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Extra Attack <span class="badge">Class ability</span></summary>
+            <p class="note">You can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Fast Movement <span class="badge">Class ability</span></summary>
+            <p class="note">Your speed increases by 10 feet while you are not wearing heavy armor.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Path Feature (Beast - Bestial Strength) <span class="badge">Class ability (Subclass)</span></summary>
+            <p class="note">Path of the Beast level 6 feature (Bestial Strength): gain swim or climb speed equal to walking speed. Once per turn, extend a jump by the result of a Strength (Athletics) check.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Feral Instincts <span class="badge">Class ability</span></summary>
+            <p class="note">Advantage on initiative rolls. If surprised at the start of combat, you can act normally on your first turn if you enter rage first.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Brutal Critical (1 Die) <span class="badge">Class ability</span></summary>
+            <p class="note">One additional weapon damage die on a melee critical hit at level 9 (+1d4 for a dagger).</p>
+          </details>
+        </li>
+        <li data-category="general">
+          <details>
+            <summary>Piercer <span class="badge gold">General feat</span></summary>
+            <p class="note">Feat benefit. Reroll one piercing damage die once per turn; roll an extra weapon damage die on a piercing critical hit (+1d4 for a dagger).</p>
+          </details>
+        </li>
+        <li data-category="general">
+          <details>
+            <summary>Defensive Duelist <span class="badge gold">General feat</span></summary>
+            <p class="note">When wielding a finesse weapon with proficiency, use your reaction to add your proficiency bonus to your AC against a melee attack.</p>
+          </details>
+        </li>
+        <li data-category="cultural">
+          <details>
+            <summary>Squat Nimbleness <span class="badge gold">Cultural feat</span></summary>
+            <p class="note">Increase your Strength or Dexterity score by 1 (to a max of 20), increase walking speed by 5 ft, gain proficiency in Acrobatics or Athletics, and have advantage on any Strength (Athletics) or Dexterity (Acrobatics) check to escape from being grappled.</p>
+          </details>
+        </li>
+        <li data-category="cultural">
+          <details>
+            <summary>Low Blow <span class="badge gold">Cultural feat</span></summary>
+            <p class="note">Halfling campaign feat. When attacking a larger creature than yourself, cause extra 1d4 damage per proficiency bonus on any critical hit (+4d4 at proficiency +4).</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Danger Sense <span class="badge">Class ability</span></summary>
+            <p class="note">Advantage on Dexterity saving throws against effects that you can see, provided you aren't blinded, deafened, or incapacitated.</p>
+          </details>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="sheet-right">
+    <section class="box" aria-labelledby="ability-heading">
+      <h2 class="section-title" id="ability-heading"><span class="ornament" aria-hidden="true">◇</span> Ability scores</h2>
+      <div class="ability-grid">
+        <div class="ability"><span class="label"><abbr title="Strength">STR</abbr></span><span class="modifier" aria-label="Strength modifier plus zero">+0</span><span class="score">10</span></div>
+        <div class="ability"><span class="label"><abbr title="Dexterity">DEX</abbr></span><span class="modifier" aria-label="Dexterity modifier plus four">+4</span><span class="score">18</span></div>
+        <div class="ability"><span class="label"><abbr title="Constitution">CON</abbr></span><span class="modifier" aria-label="Constitution modifier plus one">+1</span><span class="score">12</span></div>
+        <div class="ability"><span class="label"><abbr title="Intelligence">INT</abbr></span><span class="modifier" aria-label="Intelligence modifier minus one">−1</span><span class="score">8</span></div>
+        <div class="ability"><span class="label"><abbr title="Wisdom">WIS</abbr></span><span class="modifier" aria-label="Wisdom modifier plus one">+1</span><span class="score">13</span></div>
+        <div class="ability"><span class="label"><abbr title="Charisma">CHA</abbr></span><span class="modifier" aria-label="Charisma modifier plus two">+2</span><span class="score">15</span></div>
+      </div>
+    </section>
+
+    <section class="box" aria-labelledby="saves-heading">
+      <h2 class="section-title" id="saves-heading">Saving throws</h2>
+      <table class="rows compact-table" aria-label="Saving throw bonuses"><tbody>
+        <tr><td>+4</td><td>Strength</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+4</td><td>Dexterity</td><td>DEX</td></tr>
+        <tr><td>+5</td><td>Constitution</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>−1</td><td>Intelligence</td><td>INT</td></tr>
+        <tr><td>+1</td><td>Wisdom</td><td>WIS</td></tr>
+        <tr><td>+2</td><td>Charisma</td><td>CHA</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="box" aria-labelledby="skills-heading">
+      <h2 class="section-title" id="skills-heading">Skills</h2>
+      <table class="rows compact-table" aria-label="Skill bonuses and recorded proficiencies"><tbody>
+        <tr><td>+8</td><td>Acrobatics</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+1</td><td>Animal Handling</td><td>WIS</td></tr>
+        <tr><td>−1</td><td>Arcana</td><td>INT</td></tr>
+        <tr><td>+0</td><td>Athletics</td><td>STR</td></tr>
+        <tr><td>+2</td><td>Deception</td><td>CHA</td></tr>
+        <tr><td>−1</td><td>History</td><td>INT</td></tr>
+        <tr><td>+1</td><td>Insight</td><td>WIS</td></tr>
+        <tr><td>+6</td><td>Intimidation</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>−1</td><td>Investigation</td><td>INT</td></tr>
+        <tr><td>+1</td><td>Medicine</td><td>WIS</td></tr>
+        <tr><td>−1</td><td>Nature</td><td>INT</td></tr>
+        <tr><td>+5</td><td>Perception</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+2</td><td>Performance</td><td>CHA</td></tr>
+        <tr><td>+6</td><td>Persuasion</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>−1</td><td>Religion</td><td>INT</td></tr>
+        <tr><td>+4</td><td>Sleight of Hand</td><td>DEX</td></tr>
+        <tr><td>+8</td><td>Stealth</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+5</td><td>Survival</td><td aria-label="Proficient">✓</td></tr>
+      </tbody></table>
+      <p class="note">✓ marks the six skill proficiencies shown on the screenshot. Their recorded bonuses include proficiency; other rows use ability modifiers.</p>
+    </section>
+  </div>
+</div>
