@@ -3,6 +3,7 @@
 - Always use the campaign draft over the official rules.
 - Follow project house rules: rules with blue headers are used; rules written in red are not used.
 - Ensure all character sheets, features, and rules references accurately reflect the campaign draft and custom options (such as cultural feats, racial traits, and subclass variants).
+- Feats may be freely combined from both the cultural feat list and the general feat list; characters are not restricted to choosing feats from only one category.
 
 ## Character Sheet Template & Structure
 
