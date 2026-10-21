@@ -1,8 +1,8 @@
-// Dependency-free offline build: node build.cjs
+// Dependency-free static build: node build.cjs
 const fs = require("node:fs");
 const path = require("node:path");
 
-const output = path.join(__dirname, "offline");
+const output = path.join(__dirname, "dist");
 for (const file of ["index.html", "characters/finn_wildblade/finn_wildblade.html"]) {
   const source = path.join(__dirname, file);
   const directory = path.dirname(source);
@@ -19,4 +19,4 @@ for (const file of ["index.html", "characters/finn_wildblade/finn_wildblade.html
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, html);
 }
-console.log("Built offline/index.html (open directly in your browser).");
+console.log("Built dist/index.html.");

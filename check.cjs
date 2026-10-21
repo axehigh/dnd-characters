@@ -19,22 +19,22 @@ assert.ok(allHtml.includes('id="feature-search"'), "Feature search input must be
 assert.ok(allHtml.includes('data-filter="class"'), "Feature category filters must be present");
 
 execFileSync(process.execPath, [path.join(__dirname, "build.cjs")]);
-const offline = fs.readFileSync(path.join(__dirname, "offline", "characters", "finn_wildblade", "finn_wildblade.html"), "utf8");
-assert.ok(!offline.includes("data-src="), "Offline tabs must not require fetching");
-assert.ok(!offline.includes('rel="stylesheet"'), "Offline CSS must be embedded");
-assert.ok(offline.includes(fs.readFileSync(path.join(__dirname, "styles.css"), "utf8")));
+const built = fs.readFileSync(path.join(__dirname, "dist", "characters", "finn_wildblade", "finn_wildblade.html"), "utf8");
+assert.ok(!built.includes("data-src="), "Built tabs must not require fetching");
+assert.ok(!built.includes('rel="stylesheet"'), "Built CSS must be embedded");
+assert.ok(built.includes(fs.readFileSync(path.join(__dirname, "styles.css"), "utf8")));
 for (const file of tabFiles) {
   const fragment = fs.readFileSync(path.join(__dirname, "characters", "finn_wildblade", "tabs", file), "utf8");
-  assert.ok(offline.includes(fragment.replace(/src="([^"]+\.jpg)"/g, (_match, src) =>
-    `src="data:image/jpeg;base64,${fs.readFileSync(path.join(__dirname, "characters", "finn_wildblade", src)).toString("base64")}"`)), `Missing offline fragment: ${file}`);
+  assert.ok(built.includes(fragment.replace(/src="([^"]+\.jpg)"/g, (_match, src) =>
+    `src="data:image/jpeg;base64,${fs.readFileSync(path.join(__dirname, "characters", "finn_wildblade", src)).toString("base64")}"`)), `Missing built fragment: ${file}`);
 }
-assert.equal([...offline.matchAll(/<img\b/g)].length, 4);
-assert.equal([...offline.matchAll(/src="data:image\/jpeg;base64,/g)].length, 4);
-const offlineIndex = fs.readFileSync(path.join(__dirname, "offline", "index.html"), "utf8");
-assert.ok(offlineIndex.includes('href="characters/finn_wildblade/finn_wildblade.html"'));
-assert.ok(!offlineIndex.includes('rel="stylesheet"'));
+assert.equal([...built.matchAll(/<img\b/g)].length, 4);
+assert.equal([...built.matchAll(/src="data:image\/jpeg;base64,/g)].length, 4);
+const builtIndex = fs.readFileSync(path.join(__dirname, "dist", "index.html"), "utf8");
+assert.ok(builtIndex.includes('href="characters/finn_wildblade/finn_wildblade.html"'));
+assert.ok(!builtIndex.includes('rel="stylesheet"'));
 
-for (const page of [html, offline]) {
+for (const page of [html, built]) {
   const elements = new Map();
   function element(id) {
     const attributes = {};
@@ -86,4 +86,4 @@ for (const page of [html, offline]) {
   events.popstate();
   selected(0);
 }
-console.log("PASS: source/offline content, embedded assets, unique IDs, local anchors, recorded HP, tab click, keyboard navigation, and history state.");
+console.log("PASS: source/build content, embedded assets, unique IDs, local anchors, recorded HP, tab click, keyboard navigation, and history state.");

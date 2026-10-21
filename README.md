@@ -1,41 +1,34 @@
 # The Adventurer’s Ledger
 
-Plain HTML/CSS/JavaScript, with no package installation required. Run commands
-from the repository root.
+Plain HTML/CSS/JavaScript. Requires Node.js 18 or newer and npm, with no package
+installation required. Run commands from the repository root.
 
 ## Serve the source
 
 ```sh
-python3 -m http.server 8000 --bind 127.0.0.1
+npm run dev
 ```
 
-Open <http://localhost:8000/> and choose Finn Wildblade. Stop with Ctrl+C.
+Open <http://127.0.0.1:8000/> and choose Finn Wildblade. Stop with Ctrl+C.
+If port 8000 is in use, run `PORT=8001 npm run dev` and open the printed URL.
 The character page fetches its eight tab fragments over HTTP.
 
-## Open directly (file://), without a server
-
-With Node.js 18 or newer:
+## Build
 
 ```sh
-node build.cjs
+npm run build
 ```
 
-Open `offline/index.html` in your browser (for example, `xdg-open offline/index.html`
-on Linux), then choose Finn. Or open
-`offline/characters/finn_wildblade/finn_wildblade.html` directly.
-The generated character HTML embeds all tabs, CSS, and images, so that single
-file can also be copied elsewhere and opened without a network connection.
-Keep the generated directory structure when using the index link.
-
+The generated site is written to `dist/`, with embedded tabs, CSS, and images.
 Edit the original HTML, `characters/finn_wildblade/tabs/*.html`, images, and
-`styles.css`, then rerun the build. `offline/` is generated and ignored by Git;
-do not edit it. The original character page still needs HTTP, not `file://`.
+`styles.css`, then rerun the build. `dist/` is generated and ignored by Git;
+do not edit it.
 
 ## Check
 
 ```sh
-node check.cjs
+npm run check
 ```
 
-This rebuilds the offline pages and smoke-checks content, embedded assets, tab
-navigation, keyboard controls, and history state. Browser QA is still recommended.
+This rebuilds the site and smoke-checks content, embedded assets, tab navigation,
+keyboard controls, history state, and the local server. Browser QA is still recommended.

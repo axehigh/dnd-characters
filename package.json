@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "node dev.cjs",
+    "build": "node build.cjs",
+    "check": "node check.cjs && node --test check-dev.cjs"
+  }
+}
