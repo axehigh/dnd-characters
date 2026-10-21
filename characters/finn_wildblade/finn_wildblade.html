@@ -69,6 +69,9 @@
       }
     });
 
+    // The offline build embeds the sheet instead of fetching it.
+    initFeatureFilter();
+
     function initFeatureFilter() {
       const searchInput = document.getElementById('feature-search');
       const filterBtns = document.querySelectorAll('.filter-btn');
