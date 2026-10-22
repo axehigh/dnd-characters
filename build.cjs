@@ -3,7 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const output = path.join(__dirname, "dist");
-for (const file of ["index.html", "characters/finn_wildblade/finn_wildblade.html"]) {
+for (const file of ["index.html", "characters/finn_wildblade/finn_wildblade.html", "characters/thrain_eisenkolben/thrain_eisenkolben.html"]) {
   const source = path.join(__dirname, file);
   const directory = path.dirname(source);
   let html = fs.readFileSync(source, "utf8");

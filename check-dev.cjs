@@ -16,6 +16,8 @@ test("local server serves the directory, character tabs, and assets", { timeout:
     ["/", "text/html"],
     ["/characters/finn_wildblade/finn_wildblade.html", "text/html"],
     ["/characters/finn_wildblade/tabs/sheet.html", "text/html"],
+    ["/characters/thrain_eisenkolben/thrain_eisenkolben.html", "text/html"],
+    ["/characters/thrain_eisenkolben/tabs/sheet.html", "text/html"],
     ["/styles.css", "text/css"],
     ["/characters/finn_wildblade/images/finn_wildblade_portrait.jpg", "image/jpeg"]
   ]) {

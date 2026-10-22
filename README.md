@@ -9,7 +9,7 @@ installation required. Run commands from the repository root.
 npm run dev
 ```
 
-Open <http://127.0.0.1:8000/> and choose Finn Wildblade. Stop with Ctrl+C.
+Open <http://127.0.0.1:8000/> and choose Finn Wildblade or Thrain Eisenkolben. Stop with Ctrl+C.
 If port 8000 is in use, run `PORT=8001 npm run dev` and open the printed URL.
 The character page fetches its eight tab fragments over HTTP.
 
@@ -20,7 +20,7 @@ npm run build
 ```
 
 The generated site is written to `dist/`, with embedded tabs, CSS, and images.
-Edit the original HTML, `characters/finn_wildblade/tabs/*.html`, images, and
+Edit the original HTML, `characters/<character_name>/tabs/*.html`, images, and
 `styles.css`, then rerun the build. `dist/` is generated and ignored by Git;
 do not edit it.
 
