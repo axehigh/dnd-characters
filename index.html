@@ -11,6 +11,16 @@
 <body>
   <div class="masthead">
     <div class="brand"><span aria-hidden="true">✧</span> The Adventurer’s Ledger</div>
+    <div class="theme-selector">
+      <label for="theme-select">Theme:</label>
+      <select id="theme-select" class="theme-select" aria-label="Select fantasy theme">
+        <option value="parchment">Ancient Parchment</option>
+        <option value="midnight">Arcane Midnight</option>
+        <option value="woodland">Woodland Realm</option>
+        <option value="dark-parchment">Dark Parchment</option>
+        <option value="original-dark">Original Dark</option>
+      </select>
+    </div>
   </div>
   <main class="ledger" id="main">
     <header class="identity">
@@ -45,5 +55,18 @@
     </section>
   </main>
   <footer>The Adventurer’s Ledger <span aria-hidden="true">◇</span> Character Records</footer>
+  <script>
+    const themeSelect = document.getElementById('theme-select');
+    const savedTheme = localStorage.getItem('adventurer_theme') || 'parchment';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (themeSelect) {
+      themeSelect.value = savedTheme;
+      themeSelect.addEventListener('change', (e) => {
+        const selected = e.target.value;
+        document.documentElement.setAttribute('data-theme', selected);
+        localStorage.setItem('adventurer_theme', selected);
+      });
+    }
+  </script>
 </body>
 </html>
