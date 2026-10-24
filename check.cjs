@@ -23,7 +23,7 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben"]) {
     assert.ok(allHtml.includes('<div class="hp-total">95</div>'), "Recorded HP must be preserved");
   } else {
     assert.ok(allHtml.includes('<div class="hp-total">124</div>'), "Recorded HP must be preserved");
-    assert.ok(allHtml.includes("Adapted Resistance · level 9 · choice pending"));
+    assert.ok(allHtml.includes("Adapted Resistance · level 9 · Frightened"));
     assert.ok(allHtml.includes("Trip Attack") && allHtml.includes("Disarming Attack"));
     assert.ok(allHtml.includes("Intelligence replaces Constitution"));
     assert.ok(allHtml.includes("Only one active: a new mutagen ends the previous one."));
@@ -35,7 +35,7 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben"]) {
     const mutant = fs.readFileSync(path.join(directory, "tabs", "mutant.html"), "utf8");
     for (const row of ["<td>2</td><td>+2</td><td>Spines; Nocturnal</td>",
       "<td>6</td><td>+3</td><td>Alchemical Knight; Quadrupedal</td>",
-      "<td>9</td><td>+4</td><td>Adapted Resistance (choice pending); Healing Surge</td>"]) {
+      "<td>9</td><td>+4</td><td>Adapted Resistance (Frightened); Healing Surge</td>"]) {
       assert.ok(mutant.includes(row), "Campaign secondary mutation progression must match the sheet");
     }
     assert.ok(sheet.includes("Darkvision to 120 ft") && sheet.includes("Low-light vision · 60 ft"));
