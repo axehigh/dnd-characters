@@ -49,6 +49,6 @@ server.on("error", error => {
   console.error(error.message);
   process.exitCode = 1;
 });
-server.listen(Number(process.env.PORT || 8000), "127.0.0.1", () => {
+server.listen(Number(process.env.PORT || 9000), "127.0.0.1", () => {
   console.log(`Serving http://127.0.0.1:${server.address().port}/ (Ctrl+C to stop)`);
 });

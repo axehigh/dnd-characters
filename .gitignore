@@ -1,1 +1,7 @@
 /dist/
+/.idea/.gitignore
+/.idea/db-forest-config.xml
+/.idea/deployment.xml
+/.idea/dnd-characters.iml
+/.idea/modules.xml
+/.idea/vcs.xml

@@ -1,7 +1,81 @@
 <div class="info-grid">
   <section class="box wide">
-    <h2 class="section-title">Inventory · not yet supplied</h2>
-    <p>No weapons, armor, shield, alchemical supplies, consumables, gold, or carried weight have been provided. Nothing is automatically copied from Finn or granted from a generic starting-equipment list.</p>
-    <p>Thrain is proficient with light, medium, and heavy armor, shields, and simple and martial weapons. These are proficiencies, not recorded possessions. Equipped AC, weapon damage, and attack entries remain pending equipment selection.</p>
+    <h2 class="section-title" id="inventory-heading">Weapons &amp; armour</h2>
+    <table class="record-table compact-table" aria-label="Equipped weapons and armour">
+      <thead><tr><th scope="col">Item</th><th scope="col">Cost</th><th scope="col">Weight</th><th scope="col">Campaign statistics</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Warhammer</strong></td><td>15 SP</td><td>2 lb</td><td>1d8 bludgeoning; versatile (1d10); metal</td></tr>
+        <tr><td><strong>Chain mail</strong></td><td>750 SP</td><td>55 lb</td><td>AC 16; metal, noisy, weighty 13</td></tr>
+        <tr><td><strong>Shield</strong></td><td>20 SP</td><td>6 lb</td><td>+2 AC; metal, improvised (1d4 bash)</td></tr>
+      </tbody>
+      <tfoot><tr><td><strong>Subtotal</strong></td><td><strong>785 SP</strong></td><td><strong>63 lb</strong></td><td>One weapon, one suit of armour, one shield</td></tr></tfoot>
+    </table>
+    <p class="note"><strong>Armour class 18 with the shield</strong> (chain mail 16 + shield 2), or <strong>16 with the shield stowed</strong>. Thrain keeps a hand free for alchemical substances, so the shield is carried rather than always strapped: stowing or readying it uses the free object interaction, and throwing acid, fire, fog, or a curative requires the free hand.</p>
+    <p class="note">The shield can be used as an improvised weapon for 1d4 bludgeoning if needed; it is not a proficient weapon attack. Heavy armour proficiency comes from Heavily Armoured; this suit is the recorded possession, not a bonus granted by the feat.</p>
+    <p class="note"><strong>Movement:</strong> chain mail is weighty 13. Strength 14 meets that minimum, so the 10 ft weighty movement penalty does not apply and speed stays 30 ft. The noisy quality gives disadvantage on Stealth checks.</p>
+    <p class="note"><strong>Appearance:</strong> dwarven-forged mail worn over a hardened breastplate, with spiked pauldrons, alchemical etching, and a reinforced gauntlet. A round shield bears the same alchemical etching. The suit matches the heavy-armour artwork while using the campaign chain mail statistics.</p>
+    <p class="note"><strong>Attack with the warhammer:</strong> +6 to hit (Strength +2, proficiency +4). Damage 1d8+2 one-handed or 1d10+2 with two hands; Fell-handed adds +2 to a successful melee hit, for 1d8+4 or 1d10+4. With the shield readied the warhammer stays one-handed (1d8); stow the shield to use the versatile 1d10 grip. Fury, Power, and Burst of Power are conditional additions described on the sheet.</p>
+  </section>
+
+  <section class="box">
+    <h2 class="section-title">Alchemical kit</h2>
+    <table class="record-table compact-table" aria-label="Alchemical kits and prepared substances">
+      <thead><tr><th scope="col">Item</th><th scope="col">Cost</th><th scope="col">Weight</th><th scope="col">Use</th></tr></thead>
+      <tbody>
+        <tr><td>Alchemists kit</td><td>100 SP</td><td>5 lb</td><td>10 doses; Craft (Alchemy), table 5b substances</td></tr>
+        <tr><td>Herbalism kit</td><td>100 SP</td><td>5 lb</td><td>10 doses; table 5a concoctions</td></tr>
+        <tr><td>Alchemical doses (10)</td><td>20 SP</td><td>1 lb</td><td>Spare doses for crafting</td></tr>
+        <tr><td>Herbalist doses (10)</td><td>20 SP</td><td>1 lb</td><td>Spare doses for crafting</td></tr>
+        <tr><td>Acid ×2</td><td>12 SP each</td><td>—</td><td>20 ft; DC 12 Dexterity save or 2d6 damage</td></tr>
+        <tr><td>Fire ×1</td><td>24 SP</td><td>—</td><td>20 ft; DC 12 Dexterity save or 1d6 damage each turn</td></tr>
+        <tr><td>Freeze ×1</td><td>12 SP</td><td>—</td><td>10 ft burst; difficult terrain, Balance DC 12 or prone</td></tr>
+        <tr><td>Fog ×1</td><td>24 SP</td><td>—</td><td>20 ft sphere heavily obscured for 1 minute</td></tr>
+        <tr><td>Curative ×2</td><td>36 SP each</td><td>—</td><td>Drink for 2d4+2 temporary HP</td></tr>
+        <tr><td>Smelling salts ×1</td><td>36 SP</td><td>—</td><td>New save against an ongoing condition effect</td></tr>
+        <tr><td>Healers kit</td><td>5 SP</td><td>1 lb</td><td>10 uses to stabilize or heal</td></tr>
+        <tr><td>Bandages (10)</td><td>1 SP</td><td>1 lb</td><td>Each healers kit attempt consumes one</td></tr>
+      </tbody>
+      <tfoot><tr><td><strong>Subtotal</strong></td><td><strong>438 SP</strong></td><td><strong>14 lb</strong></td><td>Substances have no listed weight</td></tr></tfoot>
+    </table>
+    <p class="note">Substance and concoction weights are not listed in the campaign gear tables, so they are recorded as — and excluded from the total. Crafting consumes kit doses; a long rest does not refill them. The alchemist lab that grants +1 effective proficiency is a stationary workshop and is not carried.</p>
+  </section>
+
+  <section class="box">
+    <h2 class="section-title">Adventuring gear</h2>
+    <table class="record-table compact-table" aria-label="Carried adventuring gear">
+      <thead><tr><th scope="col">Item</th><th scope="col">Cost</th><th scope="col">Weight</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Backpack</td><td>3 SP</td><td>5 lb</td><td>+25% carrying capacity</td></tr>
+        <tr><td>Bedroll</td><td>1 SP</td><td>7 lb</td><td>—</td></tr>
+        <tr><td>Mess kit</td><td>0.5 SP</td><td>0.5 lb</td><td>Cutlery, pot, flask</td></tr>
+        <tr><td>Waterskin</td><td>0.5 SP</td><td>1 lb</td><td>Holds 2 litres</td></tr>
+        <tr><td>Field rations ×5</td><td>0.125 SP</td><td>1.25 lb</td><td>Five days</td></tr>
+        <tr><td>Rope, hemp (50 ft)</td><td>2 SP</td><td>10 lb</td><td>Holds up to 2,000 lb</td></tr>
+        <tr><td>Crowbar</td><td>2 SP</td><td>5 lb</td><td>Advantage to open doors and hatches</td></tr>
+        <tr><td>Tinderbox</td><td>0.5 SP</td><td>—</td><td>Light a fire as an action</td></tr>
+        <tr><td>Torch ×2</td><td>0.4 SP</td><td>2 lb</td><td>1 hour each</td></tr>
+        <tr><td>Lantern</td><td>10 SP</td><td>2 lb</td><td>60 ft bright, 60 ft dim</td></tr>
+        <tr><td>Lamp oil ×2</td><td>2 SP</td><td>2 lb</td><td>Six hours per flask</td></tr>
+        <tr><td>Boots, heavy</td><td>2 SP</td><td>1 lb</td><td>Worn</td></tr>
+        <tr><td>Writing equipment</td><td>2 SP</td><td>1 lb</td><td>Ink and pen</td></tr>
+        <tr><td>Book: alchemical field journal</td><td>50 SP</td><td>3 lb</td><td>Recipes, monster notes, mutagen observations</td></tr>
+        <tr><td>Dagger</td><td>3 SP</td><td>1 lb</td><td>1d4 piercing; finesse, light, thrown 20/60</td></tr>
+      </tbody>
+      <tfoot><tr><td><strong>Subtotal</strong></td><td><strong>79 SP</strong></td><td><strong>41.75 lb</strong></td><td>—</td></tr></tfoot>
+    </table>
+  </section>
+
+  <section class="box wide">
+    <h2 class="section-title">Purse &amp; encumbrance</h2>
+    <table class="record-table compact-table" aria-label="Wealth and carried weight">
+      <tbody>
+        <tr><th scope="row">Purse</th><td>46 gp 5 sp 8 cp</td></tr>
+        <tr><th scope="row">Gear spent</th><td>1,302 SP ≈ 130 gp 2 sp</td></tr>
+        <tr><th scope="row">Weight carried</th><td>118.75 lb</td></tr>
+        <tr><th scope="row">Carrying capacity</th><td>262.5 lb (Strength 14 × 15 = 210 lb, +25% from backpack)</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Load is well under capacity, so no encumbrance penalty applies under the standard rule. If the table uses the variant encumbrance rule, 118.75 lb would count as heavily encumbered for Strength 14; check with the DM before play.</p>
+    <p class="note">All prices and weights come from the campaign equipment tables, not from the standard 5e lists. The alchemist and herbalism kits are the character's working tools for Craft (Alchemy) +7.</p>
   </section>
 </div>

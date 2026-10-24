@@ -1,25 +1,33 @@
 <div class="sheet-grid">
   <div class="sheet-left">
-    <div class="notice"><strong>Recorded build:</strong> The supplied character build takes precedence over generic rules. HP, AC, equipment, and Adapted Resistance are not yet recorded. Final ability scores below are used as supplied.</div>
+    <div class="notice"><strong>Recorded build:</strong> Ability scores and selected feats follow the campaign draft. Equipment and HP are recorded on this tab and the Inventory tab. Adapted Resistance is not yet recorded.</div>
     <section class="box column" aria-labelledby="combat-heading">
       <h2 class="section-title" id="combat-heading"><span class="ornament" aria-hidden="true">◇</span> Combat</h2>
       <div class="combat-grid">
         <div class="combat-stat"><span class="label">Proficiency</span><strong>+4</strong></div>
-        <div class="combat-stat"><span class="label">Armor class</span><strong>—</strong><small>Not supplied</small></div>
+        <div class="combat-stat"><span class="label">Armor class</span><strong>18</strong><small>Chain mail + shield · 16 without</small></div>
         <div class="combat-stat"><span class="label">Initiative</span><strong>+0</strong></div>
         <div class="combat-stat"><span class="label">Speed</span><strong>30</strong><small>feet · Squat Nimbleness</small></div>
       </div>
       <div class="hp-row">
-        <section class="hit-points" aria-labelledby="hp-heading"><h2 class="label" id="hp-heading">Hit points</h2><div class="hp-total">Not supplied</div><p class="note">Tough adds +9 maximum HP at level 9; no total assumed.</p></section>
+        <section class="hit-points" aria-labelledby="hp-heading"><h2 class="label" id="hp-heading">Hit points</h2><div class="hp-total">124</div><p class="note">Recorded total; breakdown below.</p></section>
         <section class="box compact-box"><h2 class="label">Hit dice</h2><strong>9d12</strong><p class="note">Shared healing / Reserves pool</p></section>
-        <section class="box compact-box"><h2 class="label">Mutagens</h2><strong>4 / long rest</strong><p class="note">Bonus action · 1 hour · one active</p></section>
+        <section class="box compact-box"><h2 class="label">Mutagens</h2><strong>3 / long rest</strong><p class="note">Bonus action · 1 hour · one active</p></section>
       </div>
-      <p class="combat-note"><strong>Alchemical Knight · DC 16</strong>8 + PB 4 + INT 4. Three d6 superiority dice; regain expended dice on initiative or a short/long rest. Known: Trip Attack and Disarming Attack.</p>
+      <p class="combat-note"><strong>Hit point breakdown · 124</strong>54 (half of 9d12: 9 × 6) + 34 (half of the rolled dice 7, 9, 8, 10, 1, 6, 10, 6, 7, each rounded up) + 27 (CON +3 × 9) + 9 (Tough). Level 1 uses the same method.</p>
+      <p class="combat-note"><strong>Alchemical Knight · DC 15</strong>8 + PB 4 + INT 3. Three d6 superiority dice; regain expended dice on initiative or a short/long rest. Known: Trip Attack and Disarming Attack.</p>
     </section>
     <section class="box attacks" aria-labelledby="attacks-heading">
-      <h2 class="section-title" id="attacks-heading">Attack reference · no weapon selected</h2>
-      <p class="note">No weapon damage die or equipped attack is recorded. A proficient Strength-based weapon attack would use +6 to hit (STR +2 + PB +4). Extra Attack allows two attacks with the Attack action.</p>
-      <p class="note"><strong>Successful melee damage:</strong> Fell-handed +2; Old Hatred adds +4 with melee weapons against orcs, goblins, and their kind. Power adds +4 to the first melee weapon hit on each of your turns only while that mutagen is active. Do not treat these conditional bonuses as always active.</p>
+      <h2 class="section-title" id="attacks-heading">Attack reference · warhammer</h2>
+      <table class="record-table compact-table" aria-label="Equipped weapon attack">
+        <thead><tr><th scope="col">Weapon</th><th scope="col">To hit</th><th scope="col">Damage</th><th scope="col">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Warhammer</td><td>+6</td><td>1d8+2</td><td>Bludgeoning; versatile 1d10+2 with two hands</td></tr>
+          <tr><td>Warhammer, Fell-handed</td><td>+6</td><td>1d8+4</td><td>1d10+4 versatile; +2 on a successful melee hit</td></tr>
+        </tbody>
+      </table>
+      <p class="note">+6 = Strength +2 + PB +4. Extra Attack allows two attacks with the Attack action. AC 18 with chain mail + shield; stow the shield for AC 16, a free hand for alchemical substances, and the warhammer's 1d10 two-handed grip.</p>
+      <p class="note"><strong>Conditional attack and damage:</strong> After a creature damages you, Fury grants +2 to attack and damage against that creature until the end of your first round after taking the damage (+8 to hit for the warhammer). It does not apply against other targets or outside that window. Fell-handed adds +2 on successful melee attacks. Power adds +3 to the first melee weapon hit on each of your turns only while that mutagen is active.</p>
     </section>
     <section class="box" aria-labelledby="features-list-heading">
       <h2 class="section-title" id="features-list-heading">Features</h2>
@@ -35,27 +43,27 @@
       </div>
       <ul class="recorded-list">
         <li data-category="class"><details><summary>Alchemical Nature &amp; Warrior</summary><p class="note">Intelligence replaces Constitution for all Mutant class and secondary mutation DCs and features. Craft (Alchemy) and martial weapon proficiency. This does not replace Constitution for racial traits, feats, or Constitution saves.</p></details></li>
-        <li data-category="class"><details><summary>Mutagens · 4 / long rest</summary><p class="note">Bonus action to consume; lasts 1 hour. Only one active: a new mutagen ends the previous one. Precision: bonus action to focus on a visible target; weapon attacks against it crit on 19–20 until end of turn. Endurance: 4 temporary HP at the start of each combat turn, remaining temporary HP vanish when combat ends. Power: +4 damage on first melee weapon hit each of your turns. Speed: +10 ft and ignore nonmagical difficult terrain. Enhanced Reflexes: +4 to Dexterity checks and saves. Enhanced Senses: +4 to Perception and Survival checks.</p></details></li>
+        <li data-category="class"><details><summary>Mutagens · 3 / long rest</summary><p class="note">Bonus action to consume; lasts 1 hour. Only one active: a new mutagen ends the previous one. Precision: bonus action to focus on a visible target; weapon attacks against it crit on 19–20 until end of turn. Endurance: 3 temporary HP at the start of each of your turns in combat, remaining temporary HP vanish when combat ends. Power: +3 damage on first melee weapon hit each of your turns. Speed: +10 ft and ignore nonmagical difficult terrain. Enhanced Reflexes: +3 to Dexterity checks and saves. Enhanced Senses: +3 to Perception and Survival checks.</p></details></li>
         <li data-category="class"><details><summary>Extra Attack · level 5</summary><p class="note">Attack twice instead of once when taking the Attack action.</p></details></li>
-        <li data-category="class"><details><summary>Alchemical Knight · level 6</summary><p class="note">3d6 superiority dice, refreshed on initiative or short/long rest; DC 16. Two known maneuvers: Trip Attack and Disarming Attack. Primary Mutation prerequisites for secondary mutations are ignored from level 6; other prerequisites still apply unless overridden by the supplied build.</p></details></li>
+        <li data-category="class"><details><summary>Alchemical Knight · level 6</summary><p class="note">3d6 superiority dice, refreshed on initiative or short/long rest; DC 15. Two known maneuvers: Trip Attack and Disarming Attack. Primary Mutation prerequisites for secondary mutations are ignored from level 6; all other prerequisites still apply.</p></details></li>
         <li data-category="class"><details><summary>Reserves of Strength · 9d12 shared Hit Dice</summary><p class="note">Steady Arm: reaction on a weapon miss, spend a Hit Die and add its roll to the attack. Power Through: reaction when hit, spend a Hit Die and subtract its roll from damage before resistance/vulnerability. Burst of Power: on a weapon critical hit, spend a Hit Die and add twice its roll to damage. Spent dice are no longer available for healing.</p></details></li>
         <li data-category="class"><details><summary>Adapted Resistance · level 9 · choice pending</summary><p class="note">Choose Frightened, Poisoned, Paralyzed, Stunned, Blinded, or Charmed. Gain advantage on saves against effects inflicting that condition and saves to end it. No condition has been selected; this is not immunity or blanket advantage against all six.</p></details></li>
-        <li data-category="class"><details><summary>Healing Surge · secondary mutation · level 2</summary><p class="note">Bonus action: spend one Hit Die and regain HP equal to the roll (1d12). No automatic Constitution or Intelligence bonus; Durable sets minimum HP regained to 4. Uses the shared Hit Dice pool.</p></details></li>
-        <li data-category="class"><details><summary>Limit Removal · secondary mutation · level 2</summary><p class="note">When out of Hit Dice, roll a d12 for a Reserves ability instead and take necrotic damage equal to the roll, ignoring resistances and immunities. This is costly, not free healing. Uses the supplied build's level and damage rule.</p></details></li>
+        <li data-category="class"><details><summary>Spines · secondary mutation · level 2</summary><p class="note">Creatures grappling you or grappled by you take 1d6 piercing damage at the start of each of their turns.</p></details></li>
+        <li data-category="class"><details><summary>Nocturnal · secondary mutation · level 2</summary><p class="note">Darkvision to 120 ft. Gain the benefits of a long rest with 1 hour asleep and 7 hours of light activity, such as keeping watch. Requires not having Hibernation; Hibernation is not selected. Stronger than the separate dwarf low-light vision trait.</p></details></li>
         <li data-category="class"><details><summary>Quadrupedal · secondary mutation · level 6</summary><p class="note">Stand from prone for 5 ft; crawl without extra movement cost. Prone does not impose disadvantage on melee weapon attacks unless using a two-handed weapon. While prone, use a reaction against an incoming melee attack to negate advantage from prone until end of the current turn.</p></details></li>
-        <li data-category="class"><details><summary>Spines · secondary mutation · level 9</summary><p class="note">Creatures grappling you or grappled by you take 1d6 piercing damage at the start of each of their turns.</p></details></li>
-        <li data-category="racial"><details><summary>Dwarf ability modifiers &amp; Athletics</summary><p class="note">+1 Constitution, +1 Wisdom; Athletics proficiency. Supplied final scores are already recorded, not increased again.</p></details></li>
-        <li data-category="racial"><details><summary>Low-light vision · 60 ft</summary><p class="note">Campaign low-light vision within 60 ft; cannot see in complete darkness. Not standard darkvision.</p></details></li>
+        <li data-category="class"><details><summary>Healing Surge · secondary mutation · level 9</summary><p class="note">Bonus action: spend one Hit Die and regain HP equal to the roll (1d12). No automatic Constitution or Intelligence bonus; Durable sets minimum HP regained to 6. Requires Mutant level 3; selected at level 9. Uses the shared Hit Dice pool.</p></details></li>
+        <li data-category="racial"><details><summary>Dwarf ability modifiers &amp; Athletics</summary><p class="note">+1 Constitution, +1 Wisdom; Athletics proficiency. Already included in the final scores, not increased again.</p></details></li>
+        <li data-category="racial"><details><summary>Low-light vision · 60 ft</summary><p class="note">Campaign dwarf low-light vision within 60 ft; this racial trait cannot see in complete darkness and is not standard darkvision. Nocturnal separately grants stronger darkvision to 120 ft.</p></details></li>
         <li data-category="racial"><details><summary>Hardy</summary><p class="note">Advantage on poison saves and resistance to poison damage.</p></details></li>
-        <li data-category="racial"><details><summary>Stonecunning</summary><p class="note">History checks about the origin of stonework use double proficiency: INT +4 + twice PB +8 = +12.</p></details></li>
-        <li data-category="racial"><details><summary>Tough</summary><p class="note">+1 maximum HP per level (+9 at level 9). Total HP not supplied.</p></details></li>
-        <li data-category="racial"><details><summary>Resilient · 1 / long rest</summary><p class="note">Reaction when taking damage: reduce damage by 1d8 + CON +2. This racial trait still uses Constitution.</p></details></li>
-        <li data-category="cultural"><details><summary>Dwarf Fortitude · level 1</summary><p class="note">When you Dodge in combat, spend one Hit Die to heal 1d12 + CON +2. Durable minimum HP regained is 4. Healing consumes a Hit Die; the Dodge action is required.</p></details></li>
-        <li data-category="general"><details><summary>Heavily Armoured · level 1</summary><p class="note">Heavy armor proficiency. Proficiency is not ownership of armor; no AC assumed.</p></details></li>
-        <li data-category="general"><details><summary>Durable · level 3</summary><p class="note">When rolling a Hit Die to regain HP, minimum HP regained equals twice Constitution modifier: 4. Does not set a minimum on attack or damage-reduction rolls.</p></details></li>
-        <li data-category="cultural"><details><summary>Old Hatred · level 5</summary><p class="note">+PB (+4) melee weapon damage against orcs, goblins, and their kind.</p></details></li>
+        <li data-category="racial"><details><summary>Stonecunning</summary><p class="note">History checks about the origin of stonework use double proficiency: INT +3 + twice PB +8 = +11.</p></details></li>
+        <li data-category="racial"><details><summary>Tough</summary><p class="note">+1 maximum HP per level (+9 at level 9), included in the recorded 124 HP.</p></details></li>
+        <li data-category="racial"><details><summary>Resilient · 1 / long rest</summary><p class="note">Reaction when taking damage: reduce damage by 1d8 + CON +3. This racial trait still uses Constitution.</p></details></li>
+        <li data-category="cultural"><details><summary>Dwarf Fortitude · level 1</summary><p class="note">+1 Constitution (maximum 20), included in the final score. When you Dodge in combat, spend one Hit Die to heal 1d12 + CON +3. Durable minimum HP regained is 6. Healing consumes a Hit Die; the Dodge action is required.</p></details></li>
+        <li data-category="general"><details><summary>Heavily Armoured · level 1</summary><p class="note">Heavy armor proficiency. Proficiency is not ownership of armor; the chain mail and shield listed on the Inventory tab are the recorded gear (AC 18, 16 with the shield stowed).</p></details></li>
+        <li data-category="general"><details><summary>Durable · level 3</summary><p class="note">When rolling a Hit Die to regain HP, minimum HP regained equals twice Constitution modifier: 6. Does not set a minimum on attack or damage-reduction rolls.</p></details></li>
+        <li data-category="cultural"><details><summary>Fury · level 5</summary><p class="note">After a creature damages you, gain +2 to attack and damage against that creature until the end of your first round after taking the damage. Not a passive bonus and not against other targets.</p></details></li>
         <li data-category="general"><details><summary>Fell-handed · level 7</summary><p class="note">+half PB (+2) damage on successful melee attacks.</p></details></li>
-        <li data-category="cultural"><details><summary>Squat Nimbleness · level 9</summary><p class="note">Supplied option: +1 Intelligence or Strength, selected Intelligence; +5 ft speed (30 ft total), Acrobatics proficiency, advantage on Athletics or Acrobatics checks to escape grapples. Uses the supplied Intelligence option instead of the draft's Strength/Dexterity option.</p></details></li>
+        <li data-category="cultural"><details><summary>Squat Nimbleness · level 9</summary><p class="note">Campaign choice: +1 Strength (maximum 20), included in the final score; +5 ft speed (30 ft total), Acrobatics proficiency, advantage on Athletics or Acrobatics checks to escape grapples. The campaign allows Strength or Dexterity, not Intelligence.</p></details></li>
       </ul>
     </section>
   </div>
@@ -65,39 +73,39 @@
       <div class="ability-grid">
         <div class="ability"><span class="label">STR</span><span class="modifier">+2</span><span class="score">14</span></div>
         <div class="ability"><span class="label">DEX</span><span class="modifier">+0</span><span class="score">10</span></div>
-        <div class="ability"><span class="label">CON</span><span class="modifier">+2</span><span class="score">14</span></div>
-        <div class="ability"><span class="label">INT</span><span class="modifier">+4</span><span class="score">18</span></div>
-        <div class="ability"><span class="label">WIS</span><span class="modifier">+0</span><span class="score">11</span></div>
+        <div class="ability"><span class="label">CON</span><span class="modifier">+3</span><span class="score">16</span></div>
+        <div class="ability"><span class="label">INT</span><span class="modifier">+3</span><span class="score">17</span></div>
+        <div class="ability"><span class="label">WIS</span><span class="modifier">+1</span><span class="score">13</span></div>
         <div class="ability"><span class="label">CHA</span><span class="modifier">−1</span><span class="score">8</span></div>
       </div>
-      <p class="note">Recorded standard array before racial/advancement: 15, 14, 13, 12, 10, 8. Dwarf +1 CON / +1 WIS; level 4 and 8 each +1 INT; Squat Nimbleness +1 INT. The final scores imply bases of 14, 10, 13, 15, 10, 8 (STR, DEX, CON, INT, WIS, CHA): two 10s and no 12, which contradicts the standard array. Final scores are kept as supplied; reconciliation is pending confirmation.</p>
+      <p class="note">Standard array before race and feats (STR, DEX, CON, INT, WIS, CHA): 13, 10, 14, 15, 12, 8, using each value once. Dwarf +1 CON / +1 WIS; Dwarf Fortitude +1 CON; levels 4 and 8 each +1 INT; Squat Nimbleness +1 STR. Final scores: STR 14, DEX 10, CON 16, INT 17, WIS 13, CHA 8.</p>
     </section>
     <section class="box" aria-labelledby="saves-heading">
       <h2 class="section-title" id="saves-heading">Saving throws</h2>
       <table class="rows compact-table" aria-label="Saving throw bonuses"><tbody>
         <tr><td>+2</td><td>Strength</td><td>STR</td></tr>
         <tr><td>+0</td><td>Dexterity</td><td>DEX</td></tr>
-        <tr><td>+6</td><td>Constitution</td><td aria-label="Proficient">✓</td></tr>
-        <tr><td>+4</td><td>Intelligence</td><td>INT</td></tr>
-        <tr><td>+0</td><td>Wisdom</td><td>WIS</td></tr>
+        <tr><td>+7</td><td>Constitution</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+3</td><td>Intelligence</td><td>INT</td></tr>
+        <tr><td>+1</td><td>Wisdom</td><td>WIS</td></tr>
         <tr><td>+3</td><td>Charisma</td><td aria-label="Proficient">✓</td></tr>
       </tbody></table>
-      <p class="note">Enhanced Reflexes, when active, makes Dexterity saves +4. Hardy grants advantage against poison.</p>
+      <p class="note">Enhanced Reflexes, when active, makes Dexterity saves +3 and Acrobatics +7. Hardy grants advantage against poison.</p>
     </section>
     <section class="box" aria-labelledby="skills-heading">
       <h2 class="section-title" id="skills-heading">Recorded skill proficiencies</h2>
       <table class="rows compact-table" aria-label="Recorded proficient skills"><tbody>
-        <tr><td>+8</td><td>Craft (Alchemy)</td><td>INT</td></tr>
+        <tr><td>+7</td><td>Craft (Alchemy)</td><td>INT</td></tr>
         <tr><td>+6</td><td>Athletics</td><td>STR</td></tr>
-        <tr><td>+4</td><td>Perception</td><td>WIS</td></tr>
-        <tr><td>+8</td><td>Investigation</td><td>INT</td></tr>
+        <tr><td>+5</td><td>Perception</td><td>WIS</td></tr>
+        <tr><td>+7</td><td>Investigation</td><td>INT</td></tr>
         <tr><td>+4</td><td>Acrobatics</td><td>DEX</td></tr>
       </tbody></table>
-      <p class="note">All listed skills include PB +4. Acrobatics comes from Squat Nimbleness. Enhanced Senses, when active, gives Perception +8 and Survival +4.</p>
+      <p class="note">All listed skills include PB +4. Acrobatics comes from Squat Nimbleness. Survival is not proficient: +1 normally. Enhanced Senses, when active, gives Perception +8 and Survival +4.</p>
     </section>
     <section class="box" aria-labelledby="proficiencies-heading">
       <h2 class="section-title" id="proficiencies-heading">Proficiencies</h2>
-      <p class="note">Light, medium, heavy armor and shields; simple and martial weapons. Heavy armor from Heavily Armoured. No equipment selected.</p>
+      <p class="note">Light, medium, heavy armor and shields; simple and martial weapons. Heavy armor from Heavily Armoured. Equipped: warhammer, chain mail, and shield (AC 18; 16 with the shield stowed).</p>
     </section>
   </div>
 </div>
