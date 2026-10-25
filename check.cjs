@@ -8,7 +8,7 @@ execFileSync(process.execPath, [path.join(__dirname, "build.cjs")]);
 const builtIndex = fs.readFileSync(path.join(__dirname, "dist", "index.html"), "utf8");
 assert.ok(!builtIndex.includes('rel="stylesheet"'));
 const menuCards = [...builtIndex.matchAll(/<a class="box character-card"[^>]*>([\s\S]*?)<\/a>/g)];
-assert.equal(menuCards.length, 3);
+assert.equal(menuCards.length, 4);
 for (const [, card] of menuCards) {
   assert.equal([...card.matchAll(/<img class="character-artwork" src="data:image\/(?:jpeg|png|svg\+xml);base64,/g)].length, 1,
     "Each character card must have an embedded portrait for offline use");
