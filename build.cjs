@@ -13,8 +13,8 @@ for (const file of ["index.html", "characters/finn_wildblade/finn_wildblade.html
   html = html.replace(/<link rel="stylesheet" href="([^"]+)">/g,
     (_match, href) => `<style>\n${fs.readFileSync(path.resolve(directory, href), "utf8")}\n</style>`);
   // Fragment URLs are relative to the container page, not the tabs directory.
-  html = html.replace(/src="([^"]+\.(jpg|svg))"/g, (_match, src, extension) =>
-    `src="data:image/${extension === "svg" ? "svg+xml" : "jpeg"};base64,${fs.readFileSync(path.resolve(directory, src)).toString("base64")}"`);
+  html = html.replace(/src="([^"]+\.(jpg|png|svg))"/g, (_match, src, extension) =>
+    `src="data:image/${extension === "svg" ? "svg+xml" : extension === "jpg" ? "jpeg" : "png"};base64,${fs.readFileSync(path.resolve(directory, src)).toString("base64")}"`);
   const destination = path.join(output, file);
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, html);

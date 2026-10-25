@@ -10,7 +10,7 @@ assert.ok(!builtIndex.includes('rel="stylesheet"'));
 const menuCards = [...builtIndex.matchAll(/<a class="box character-card"[^>]*>([\s\S]*?)<\/a>/g)];
 assert.equal(menuCards.length, 3);
 for (const [, card] of menuCards) {
-  assert.equal([...card.matchAll(/<img class="character-artwork" src="data:image\/(?:jpeg|svg\+xml);base64,/g)].length, 1,
+  assert.equal([...card.matchAll(/<img class="character-artwork" src="data:image\/(?:jpeg|png|svg\+xml);base64,/g)].length, 1,
     "Each character card must have an embedded portrait for offline use");
 }
 for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"]) {
@@ -86,21 +86,24 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"
   assert.ok(built.includes(fs.readFileSync(path.join(__dirname, "styles.css"), "utf8")));
   for (const file of tabFiles) {
     const fragment = fs.readFileSync(path.join(directory, "tabs", file), "utf8");
-    assert.ok(built.includes(fragment.replace(/src="([^"]+\.(jpg|svg))"/g, (_match, src, extension) =>
-      `src="data:image/${extension === "svg" ? "svg+xml" : "jpeg"};base64,${fs.readFileSync(path.join(directory, src)).toString("base64")}"`)), `Missing built fragment: ${file}`);
+    assert.ok(built.includes(fragment.replace(/src="([^"]+\.(jpg|png|svg))"/g, (_match, src, extension) =>
+      `src="data:image/${extension === "svg" ? "svg+xml" : extension === "jpg" ? "jpeg" : "png"};base64,${fs.readFileSync(path.join(directory, src)).toString("base64")}"`)), `Missing built fragment: ${file}`);
   }
   const imageCount = [...allHtml.matchAll(/<img\b/g)].length;
   assert.equal([...built.matchAll(/<img\b/g)].length, imageCount);
-  assert.equal([...built.matchAll(/src="data:image\/(?:jpeg|svg\+xml);base64,/g)].length, imageCount);
+  assert.equal([...built.matchAll(/src="data:image\/(?:jpeg|png|svg\+xml);base64,/g)].length, imageCount);
   if (character === "valen_ashwood") {
-    const portrait = fs.readFileSync(path.join(directory, "images", "valen_ashwood_portrait.svg"));
-    const embeddedPortrait = `src="data:image/svg+xml;base64,${portrait.toString("base64")}"`;
+    const portrait = fs.readFileSync(path.join(directory, "images", "valen_portrait.png"));
+    const embeddedPortrait = `src="data:image/png;base64,${portrait.toString("base64")}"`;
     const card = menuCards.find(([card]) => card.includes(`href="characters/${character}/${character}.html"`))[1];
     assert.ok(card.includes(embeddedPortrait), "Valen's menu card must embed his own portrait");
     const imagesTab = built.match(/<section id="images"[^>]*>([\s\S]*?)<\/section>/)[1];
     assert.ok(imagesTab.includes(embeddedPortrait), "Valen's built Images tab must embed his portrait");
+    const fullImage = fs.readFileSync(path.join(directory, "images", "valen_xbow.jpg"));
+    assert.ok(imagesTab.includes(`src="data:image/jpeg;base64,${fullImage.toString("base64")}"`),
+      "Valen's built Images tab must embed his crossbow artwork");
     const sourceIndex = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
-    assert.ok(sourceIndex.includes(`src="characters/${character}/images/valen_ashwood_portrait.svg"`));
+    assert.ok(sourceIndex.includes(`src="characters/${character}/images/valen_portrait.png"`));
   }
   assert.ok(builtIndex.includes(`href="characters/${character}/${character}.html"`));
 
