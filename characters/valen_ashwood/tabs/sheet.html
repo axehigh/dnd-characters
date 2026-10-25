@@ -1,0 +1,168 @@
+<div class="sheet-grid">
+  <div class="sheet-left">
+    <section class="box column" aria-labelledby="combat-heading">
+      <h2 class="section-title" id="combat-heading"><span class="ornament" aria-hidden="true">◇</span> Combat</h2>
+
+      <div class="combat-grid">
+        <div class="combat-stat"><span class="label">Proficiency</span><strong><span class="shield">+4</span></strong></div>
+        <div class="combat-stat"><span class="label">Armor class</span><strong><span class="shield">18</span></strong></div>
+        <div class="combat-stat"><span class="label">Initiative</span><strong>+3</strong></div>
+        <div class="combat-stat"><span class="label">Speed</span><strong>30</strong><small></small></div>
+      </div>
+      <div class="hp-row">
+        <section class="hit-points" aria-labelledby="hp-heading">
+          <h2 class="label" id="hp-heading">Hit points</h2>
+          <div class="hp-total">85</div>
+        </section>
+        <section class="box compact-box"><h2 class="label">Hit dice</h2><strong>9d12</strong></section>
+        <section class="box compact-box"><h2 class="label">Reserves / Rest</h2><strong>Hit Dice / Rest</strong></section>
+      </div>
+    </section>
+
+    <section class="box attacks" aria-labelledby="attacks-heading">
+      <h2 class="section-title" id="attacks-heading">Ranged Missile Artillery &amp; Attacks</h2>
+      <table class="record-table compact-table" aria-label="Recorded attacks">
+        <thead><tr><th scope="col">Attack / Missile</th><th scope="col">Bonus</th><th scope="col">Damage</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Alchemical Heavy Crossbow <span class="badge gold">Missile Artillery</span></th><td>+7</td><td>1d10 + 3 Piercing + Alchemical payload</td></tr>
+          <tr><th scope="row">Alchemical Shrapnel Bolt <span class="badge">AoE Missile</span></th><td>DC 15 INT</td><td>2d6 Fire / Piercing (Maneuver rider)</td></tr>
+          <tr><th scope="row">Handaxe (Close Quarters)</th><td>+6</td><td>1d6 + 2 Slashing</td></tr>
+          <tr><th scope="row">Critical Hit Missile <span class="badge gold">Burst of Power</span></th><td>+7</td><td>2d10 + 2x Hit Die (Mutant Reserves)</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>Description &amp; information</summary>
+        <p class="note"><strong>Ranged Attack Bonus:</strong> Proficiency (+4) + Dexterity (+3) = +7.</p>
+        <p class="note"><strong>Alchemical Mutation DC:</strong> 8 + Constitution (+3) + Proficiency (+4) = <strong>15</strong>.</p>
+        <p class="note"><strong>Missile Artillery:</strong> Valen specializes in sending volleys of bolts infused with volatile alchemical concoctions from heavy ranged weaponry across the battlefield.</p>
+      </details>
+    </section>
+
+    <section class="box" aria-labelledby="features-list-heading">
+      <h2 class="section-title" id="features-list-heading">Features</h2>
+      <div class="feature-filters">
+        <input type="search" id="feature-search" class="feature-search" placeholder="Search features by name or description..." aria-label="Search features">
+        <div class="filter-buttons" role="group" aria-label="Feature category filters">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="class">Class</button>
+          <button type="button" class="filter-btn" data-filter="racial">Racial</button>
+          <button type="button" class="filter-btn" data-filter="cultural">Cultural</button>
+          <button type="button" class="filter-btn" data-filter="general">General</button>
+        </div>
+      </div>
+      <ul class="recorded-list">
+        <li data-category="racial">
+          <details>
+            <summary>Human Versatility <span class="badge green">Racial trait</span></summary>
+            <p class="note">+1 to all ability scores, extra skill proficiency, and an extra feat.</p>
+          </details>
+        </li>
+        <li data-category="cultural">
+          <details>
+            <summary>Bowman of the Guild <span class="badge gold">Cultural feat</span></summary>
+            <p class="note">Specialized training in ranged weapons and missile volleys, increasing precision and missile range.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Primary Mutation: Alchemical <span class="badge">Mutant 1</span></summary>
+            <p class="note">Mutant class abilities and Secondary Mutations use Intelligence/Constitution for DCs. Proficiency with Craft (Alchemy) and martial weapons. Replaced secondary mutations with Heavy Armor proficiency and Archery Fighting Style.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Secondary Mutations &amp; Heavy Armor <span class="badge">Mutant 2</span></summary>
+            <p class="note">Gained heavy armor proficiency and Archery Fighting Style in place of secondary mutations (+2 to ranged weapon attack rolls).</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Reserves of Strength <span class="badge">Mutant 3</span></summary>
+            <p class="note">Expend hit dice for <strong>Steady Arm</strong> (turn a missed attack into a hit) or <strong>Steady Nerves</strong> (turn a failed ability check into a success).</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Extra Attack <span class="badge">Mutant 5</span></summary>
+            <p class="note">You can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Alchemical &amp; Martial Mastery <span class="badge">Mutant 6</span></summary>
+            <p class="note">Learned 2 maneuvers from the Battle Master list (Pushing Attack, Distracting Strike). Gain 3 superiority dice (d6s) that refresh on initiative, short, or long rest. Save DC = 8 + proficiency (+4) + Intelligence (+3) = 15.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Improved Reserves of Strength <span class="badge">Mutant 7</span></summary>
+            <p class="note">Gain <strong>Burst of Power</strong>: when you score a critical hit with a weapon attack, expend a hit die and roll it, adding twice the result to the critical damage.</p>
+          </details>
+        </li>
+        <li data-category="class">
+          <details>
+            <summary>Adapted Resistance <span class="badge">Mutant 9</span></summary>
+            <p class="note">Adapted resilience and defenses against harsh conditions and battlefield hazards.</p>
+          </details>
+        </li>
+        <li data-category="general">
+          <details>
+            <summary>Sharpshooter <span class="badge gold">General feat</span></summary>
+            <p class="note">Attacking at long range doesn't impose disadvantage on your ranged weapon attacks. Your ranged weapon attacks ignore half cover and three-quarters cover. Before you make an attack with a ranged weapon that you are proficient with, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack's damage.</p>
+          </details>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="sheet-right">
+    <section class="box" aria-labelledby="ability-heading">
+      <h2 class="section-title" id="ability-heading"><span class="ornament" aria-hidden="true">◇</span> Ability scores</h2>
+      <div class="ability-grid">
+        <div class="ability"><span class="label"><abbr title="Strength">STR</abbr></span><span class="modifier" aria-label="Strength modifier plus two">+2</span><span class="score">14</span></div>
+        <div class="ability"><span class="label"><abbr title="Dexterity">DEX</abbr></span><span class="modifier" aria-label="Dexterity modifier plus three">+3</span><span class="score">16</span></div>
+        <div class="ability"><span class="label"><abbr title="Constitution">CON</abbr></span><span class="modifier" aria-label="Constitution modifier plus three">+3</span><span class="score">16</span></div>
+        <div class="ability"><span class="label"><abbr title="Intelligence">INT</abbr></span><span class="modifier" aria-label="Intelligence modifier plus three">+3</span><span class="score">16</span></div>
+        <div class="ability"><span class="label"><abbr title="Wisdom">WIS</abbr></span><span class="modifier" aria-label="Wisdom modifier plus one">+1</span><span class="score">12</span></div>
+        <div class="ability"><span class="label"><abbr title="Charisma">CHA</abbr></span><span class="modifier" aria-label="Charisma modifier plus one">+1</span><span class="score">12</span></div>
+      </div>
+    </section>
+
+    <section class="box" aria-labelledby="saves-heading">
+      <h2 class="section-title" id="saves-heading">Saving throws</h2>
+      <table class="rows compact-table" aria-label="Saving throw bonuses"><tbody>
+        <tr><td>+2</td><td>Strength</td><td>STR</td></tr>
+        <tr><td>+3</td><td>Dexterity</td><td>DEX</td></tr>
+        <tr><td>+7</td><td>Constitution</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+3</td><td>Intelligence</td><td>INT</td></tr>
+        <tr><td>+1</td><td>Wisdom</td><td>WIS</td></tr>
+        <tr><td>+5</td><td>Charisma</td><td aria-label="Proficient">✓</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="box" aria-labelledby="skills-heading">
+      <h2 class="section-title" id="skills-heading">Skills</h2>
+      <table class="rows compact-table" aria-label="Skill bonuses and recorded proficiencies"><tbody>
+        <tr><td>+3</td><td>Acrobatics</td><td>DEX</td></tr>
+        <tr><td>+1</td><td>Animal Handling</td><td>WIS</td></tr>
+        <tr><td>+7</td><td>Craft (Alchemy)</td><td aria-label="Proficient">✓ (Mutant)</td></tr>
+        <tr><td>+6</td><td>Athletics</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+1</td><td>Deception</td><td>CHA</td></tr>
+        <tr><td>+3</td><td>History</td><td>INT</td></tr>
+        <tr><td>+5</td><td>Insight</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+1</td><td>Intimidation</td><td>CHA</td></tr>
+        <tr><td>+3</td><td>Investigation</td><td>INT</td></tr>
+        <tr><td>+1</td><td>Medicine</td><td>WIS</td></tr>
+        <tr><td>+3</td><td>Nature</td><td>INT</td></tr>
+        <tr><td>+5</td><td>Perception</td><td aria-label="Proficient">✓</td></tr>
+        <tr><td>+1</td><td>Performance</td><td>CHA</td></tr>
+        <tr><td>+1</td><td>Persuasion</td><td>CHA</td></tr>
+        <tr><td>+3</td><td>Religion</td><td>INT</td></tr>
+        <tr><td>+3</td><td>Sleight of Hand</td><td>DEX</td></tr>
+        <tr><td>+3</td><td>Stealth</td><td>DEX</td></tr>
+        <tr><td>+5</td><td>Survival</td><td aria-label="Proficient">✓</td></tr>
+      </tbody></table>
+      <p class="note">✓ marks skill proficiencies including Craft (Alchemy) from the Mutant Alchemical Primary Mutation.</p>
+    </section>
+  </div>
+</div>

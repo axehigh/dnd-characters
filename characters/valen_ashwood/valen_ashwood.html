@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17191f">
+  <meta name="description" content="Valen Ashwood's character sheet: a level 9 Human Mutant (Alchemical Primary Mutation with Battle Master maneuvers and Heavy Armor) using campaign rules, featuring alchemical ranged missile artillery and versatile in/out of combat options.">
+  <title>Valen Ashwood · Character Sheet</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to character sheet</a>
+  <div class="masthead">
+    <div class="brand"><span aria-hidden="true">✧</span> The Adventurer’s Ledger</div>
+  </div>
+  <main class="ledger" id="main">
+    <header class="identity">
+      <svg class="crest" viewBox="0 0 80 90" fill="none" aria-hidden="true">
+        <path d="M40 3 74 14v34c0 18-16 31-34 39C22 79 6 66 6 48V14Z" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M40 9 68 19v29c0 14-13 26-28 33C25 74 12 62 12 48V19Z" stroke="currentColor" opacity=".4"/>
+        <path d="M40 20v50M20 40h40" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <div class="portrait portrait-placeholder" style="background:#283146; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-weight:bold; color:var(--gold); width:52px; height:52px; border-radius:50%;">VA</div>
+      <div class="identity-text">
+        <div class="eyebrow">Character record · Mutant / Alchemist</div>
+        <h1>Valen Ashwood</h1>
+        <p class="subtitle">Human <span class="badge gold">Mutant</span> <span class="badge">Alchemical Primary Mutation · Alchemical Artillery</span></p>
+      </div>
+      <div class="level"><span class="label">Level</span><strong>9</strong></div>
+    </header>
+
+    <nav class="tabs" aria-label="Character sections">
+      <a class="tab" href="#sheet">Character sheet</a>
+      <a class="tab" href="#play">How to play</a>
+      <a class="tab" href="#tactics">Combat tactics</a>
+      <a class="tab" href="#inventory">Inventory</a>
+      <a class="tab" href="#mutant">Mutant rules</a>
+      <a class="tab" href="#human">Human &amp; Feats</a>
+      <a class="tab" href="#story">Background story</a>
+      <a class="tab" href="#images">Images</a>
+    </nav>
+
+    <section id="sheet" aria-label="Character sheet" data-src="tabs/sheet.html"></section>
+    <section id="play" aria-label="How to play Valen" data-src="tabs/play.html" hidden></section>
+    <section id="tactics" aria-label="Combat tactics and ranged missile artillery" data-src="tabs/tactics.html" hidden></section>
+    <section id="inventory" aria-label="Inventory" data-src="tabs/inventory.html" hidden></section>
+    <section id="mutant" aria-label="Mutant rules and progression" data-src="tabs/mutant.html" hidden></section>
+    <section id="human" aria-label="Human rules and feats" data-src="tabs/human.html" hidden></section>
+    <section id="story" aria-label="Character story and background" data-src="tabs/story.html" hidden></section>
+    <section id="images" aria-label="Character artwork" data-src="tabs/images.html" hidden></section>
+  </main>
+  <footer>Valen Ashwood <span aria-hidden="true">◇</span> A character, not just a collection of numbers</footer>
+  <script>
+    document.querySelectorAll("section[data-src]").forEach(async section => {
+      try {
+        const res = await fetch(section.dataset.src);
+        if (res.ok) {
+          section.innerHTML = await res.text();
+          if (section.id === 'sheet') {
+            initFeatureFilter();
+          }
+        }
+      } catch (e) {
+        console.error("Failed to load tab content:", e);
+      }
+    });
+
+    initFeatureFilter();
+
+    function initFeatureFilter() {
+      const searchInput = document.getElementById('feature-search');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const listItems = document.querySelectorAll('.recorded-list > li');
+
+      if (!searchInput || !listItems.length) return;
+
+      let currentCategory = 'all';
+      let currentQuery = '';
+
+      function filterFeatures() {
+        listItems.forEach(li => {
+          const category = li.getAttribute('data-category') || '';
+          const text = li.textContent.toLowerCase();
+          
+          const matchesCategory = currentCategory === 'all' || category === currentCategory;
+          const matchesQuery = text.includes(currentQuery);
+
+          if (matchesCategory && matchesQuery) {
+            li.style.display = '';
+          } else {
+            li.style.display = 'none';
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', e => {
+        currentQuery = e.target.value.toLowerCase().trim();
+        filterFeatures();
+      });
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.getAttribute('data-filter');
+          filterFeatures();
+        });
+      });
+    }
+
+    const tabs = [...document.querySelectorAll(".tab")];
+    const panels = tabs.map(tab => document.querySelector(tab.getAttribute("href")));
+    const navigation = document.querySelector(".tabs");
+    navigation.setAttribute("role", "tablist");
+    tabs.forEach((tab, index) => {
+      tab.id = "tab-" + panels[index].id;
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-controls", panels[index].id);
+      panels[index].setAttribute("role", "tabpanel");
+      panels[index].setAttribute("aria-labelledby", tab.id);
+      panels[index].tabIndex = 0;
+    });
+    function selectPanel() {
+      const index = panels.findIndex(panel => "#" + panel.id === location.hash);
+      const selected = index === -1 ? 0 : index;
+      tabs.forEach((tab, i) => {
+        tab.setAttribute("aria-selected", String(i === selected));
+        tab.tabIndex = i === selected ? 0 : -1;
+        panels[i].hidden = i !== selected;
+      });
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", event => {
+        event.preventDefault();
+        history.pushState(null, "", tab.getAttribute("href"));
+        selectPanel();
+      });
+      tab.addEventListener("keydown", event => {
+        let next;
+        if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+        if (event.key === "ArrowLeft") next = (index + tabs.length - 1) % tabs.length;
+        if (event.key === "Home") next = 0;
+        if (event.key === "End") next = tabs.length - 1;
+        if (next !== undefined) {
+          event.preventDefault();
+          tabs[next].focus();
+          tabs[next].click();
+        }
+        if (event.key === " ") { event.preventDefault(); tab.click(); }
+      });
+    });
+    window.addEventListener("hashchange", selectPanel);
+    window.addEventListener("popstate", selectPanel);
+    selectPanel();
+  </script>
+</body>
+</html>
