@@ -7,7 +7,12 @@ const { execFileSync } = require("node:child_process");
 execFileSync(process.execPath, [path.join(__dirname, "build.cjs")]);
 const builtIndex = fs.readFileSync(path.join(__dirname, "dist", "index.html"), "utf8");
 assert.ok(!builtIndex.includes('rel="stylesheet"'));
-assert.equal([...builtIndex.matchAll(/src="data:image\/jpeg;base64,/g)].length, 2, "Menu portraits must be embedded for offline use");
+const menuCards = [...builtIndex.matchAll(/<a class="box character-card"[^>]*>([\s\S]*?)<\/a>/g)];
+assert.equal(menuCards.length, 3);
+for (const [, card] of menuCards) {
+  assert.equal([...card.matchAll(/<img class="character-artwork" src="data:image\/(?:jpeg|svg\+xml);base64,/g)].length, 1,
+    "Each character card must have an embedded portrait for offline use");
+}
 for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"]) {
   const directory = path.join(__dirname, "characters", character);
   const html = fs.readFileSync(path.join(directory, `${character}.html`), "utf8");
@@ -81,12 +86,22 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"
   assert.ok(built.includes(fs.readFileSync(path.join(__dirname, "styles.css"), "utf8")));
   for (const file of tabFiles) {
     const fragment = fs.readFileSync(path.join(directory, "tabs", file), "utf8");
-    assert.ok(built.includes(fragment.replace(/src="([^"]+\.jpg)"/g, (_match, src) =>
-      `src="data:image/jpeg;base64,${fs.readFileSync(path.join(directory, src)).toString("base64")}"`)), `Missing built fragment: ${file}`);
+    assert.ok(built.includes(fragment.replace(/src="([^"]+\.(jpg|svg))"/g, (_match, src, extension) =>
+      `src="data:image/${extension === "svg" ? "svg+xml" : "jpeg"};base64,${fs.readFileSync(path.join(directory, src)).toString("base64")}"`)), `Missing built fragment: ${file}`);
   }
-  const imageCount = character === "valen_ashwood" ? 0 : 4; // Valen has no portrait artwork yet.
+  const imageCount = [...allHtml.matchAll(/<img\b/g)].length;
   assert.equal([...built.matchAll(/<img\b/g)].length, imageCount);
-  assert.equal([...built.matchAll(/src="data:image\/jpeg;base64,/g)].length, imageCount);
+  assert.equal([...built.matchAll(/src="data:image\/(?:jpeg|svg\+xml);base64,/g)].length, imageCount);
+  if (character === "valen_ashwood") {
+    const portrait = fs.readFileSync(path.join(directory, "images", "valen_ashwood_portrait.svg"));
+    const embeddedPortrait = `src="data:image/svg+xml;base64,${portrait.toString("base64")}"`;
+    const card = menuCards.find(([card]) => card.includes(`href="characters/${character}/${character}.html"`))[1];
+    assert.ok(card.includes(embeddedPortrait), "Valen's menu card must embed his own portrait");
+    const imagesTab = built.match(/<section id="images"[^>]*>([\s\S]*?)<\/section>/)[1];
+    assert.ok(imagesTab.includes(embeddedPortrait), "Valen's built Images tab must embed his portrait");
+    const sourceIndex = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+    assert.ok(sourceIndex.includes(`src="characters/${character}/images/valen_ashwood_portrait.svg"`));
+  }
   assert.ok(builtIndex.includes(`href="characters/${character}/${character}.html"`));
 
   for (const page of [html, built]) {

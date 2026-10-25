@@ -152,9 +152,6 @@ h1 { font-weight:750; font-size:clamp(26px,4vw,36px); letter-spacing:-.8px; line
 .character-card:hover { opacity:1; border-color:var(--red); box-shadow:0 4px 16px var(--shadow); }
 .character-card:focus-visible { border-color:var(--red); }
 .character-artwork { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; object-position:center 25%; border-radius:4px 4px 0 0; border-bottom:1px solid var(--line); }
-.character-artwork-placeholder { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; background:radial-gradient(ellipse,var(--paper),var(--wash)); }
-.character-artwork-placeholder span { color:var(--red); font-size:64px; }
-.character-artwork-placeholder small { color:var(--muted); }
 .character-summary { display:flex; flex-direction:column; flex:1; padding:18px; }
 .character-summary h2 { margin:6px 0 8px; font-size:22px; }
 .character-summary .note { margin:0 0 18px; font-size:13px; }
