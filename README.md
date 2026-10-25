@@ -9,7 +9,7 @@ installation required. Run commands from the repository root.
 npm run dev
 ```
 
-Open <http://127.0.0.1:9000/> and choose Finn Wildblade or Thrain Eisenkolben. Stop with Ctrl+C.
+Open <http://127.0.0.1:9000/> and choose Finn Wildblade, Thrain Eisenkolben, or Valen Ashwood. Stop with Ctrl+C.
 If port 9000 is in use, run `PORT=9001 npm run dev` and open the printed URL.
 The character page fetches its eight tab fragments over HTTP.
 

@@ -7,7 +7,8 @@ const { execFileSync } = require("node:child_process");
 execFileSync(process.execPath, [path.join(__dirname, "build.cjs")]);
 const builtIndex = fs.readFileSync(path.join(__dirname, "dist", "index.html"), "utf8");
 assert.ok(!builtIndex.includes('rel="stylesheet"'));
-for (const character of ["finn_wildblade", "thrain_eisenkolben"]) {
+assert.equal([...builtIndex.matchAll(/src="data:image\/jpeg;base64,/g)].length, 2, "Menu portraits must be embedded for offline use");
+for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"]) {
   const directory = path.join(__dirname, "characters", character);
   const html = fs.readFileSync(path.join(directory, `${character}.html`), "utf8");
   const tabFiles = [...html.matchAll(/data-src="tabs\/([^"]+)"/g)].map(match => match[1]);
@@ -21,7 +22,7 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben"]) {
   for (const [, id] of allHtml.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(id), `Missing anchor: ${id}`);
   if (character === "finn_wildblade") {
     assert.ok(allHtml.includes('<div class="hp-total">95</div>'), "Recorded HP must be preserved");
-  } else {
+  } else if (character === "thrain_eisenkolben") {
     assert.ok(allHtml.includes('<div class="hp-total">124</div>'), "Recorded HP must be preserved");
     assert.ok(allHtml.includes("Adapted Resistance · level 9 · Frightened"));
     assert.ok(allHtml.includes("Trip Attack") && allHtml.includes("Disarming Attack"));
@@ -83,7 +84,7 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben"]) {
     assert.ok(built.includes(fragment.replace(/src="([^"]+\.jpg)"/g, (_match, src) =>
       `src="data:image/jpeg;base64,${fs.readFileSync(path.join(directory, src)).toString("base64")}"`)), `Missing built fragment: ${file}`);
   }
-  const imageCount = 4; // Each character has one header portrait and three gallery images.
+  const imageCount = character === "valen_ashwood" ? 0 : 4; // Valen has no portrait artwork yet.
   assert.equal([...built.matchAll(/<img\b/g)].length, imageCount);
   assert.equal([...built.matchAll(/src="data:image\/jpeg;base64,/g)].length, imageCount);
   assert.ok(builtIndex.includes(`href="characters/${character}/${character}.html"`));
@@ -112,11 +113,13 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben"]) {
     const events = {};
     const context = {
       document: {
+        documentElement: element(),
         querySelectorAll: selector => selector === ".tab" ? tabs : [],
         getElementById: () => null,
         querySelector: selector => selector === ".tabs" ? element() : elements.get(selector)
       },
       location,
+      localStorage: { getItem() { return null; } },
       history: { pushState(_state, _title, hash) { location.hash = hash; } },
       window: { addEventListener(name, handler) { events[name] = handler; } }
     };
@@ -141,4 +144,4 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben"]) {
     selected(0);
   }
 }
-console.log("PASS: both characters' source/build content, embedded assets, unique IDs, local anchors, recorded HP, tab click, keyboard navigation, and history state.");
+console.log("PASS: all three characters' source/build content, menu portraits, embedded assets, unique IDs, local anchors, recorded HP, tab click, keyboard navigation, and history state.");
