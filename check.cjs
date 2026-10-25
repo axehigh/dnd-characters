@@ -108,6 +108,14 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"
   assert.ok(builtIndex.includes(`href="characters/${character}/${character}.html"`));
 
   for (const page of [html, built]) {
+    const overview = page.match(/<header class="masthead">[\s\S]*?<a href="([^"]+)">[\s\S]*?Back to character overview<\/a>/);
+    assert.ok(overview, "Character masthead must link back to the overview");
+    const root = page === html ? __dirname : path.join(__dirname, "dist");
+    assert.equal(path.resolve(root, "characters", character, overview[1]), path.join(root, "index.html"));
+    const themeOptions = page.match(/<select id="theme-select"[\s\S]*?<\/select>/);
+    assert.ok(themeOptions, "Every character must offer the menu's theme selector");
+    assert.equal(themeOptions[0].replace(/\s+/g, " "),
+      builtIndex.match(/<select id="theme-select"[\s\S]*?<\/select>/)[0].replace(/\s+/g, " "));
     const elements = new Map();
     function element(id) {
       const attributes = {};
@@ -129,19 +137,28 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"
     assert.equal(tabs.length, 8);
     const location = { hash: "" };
     const events = {};
+    const themeSelect = element("theme-select");
+    const storage = new Map([["adventurer_theme", "woodland"]]);
     const context = {
       document: {
         documentElement: element(),
         querySelectorAll: selector => selector === ".tab" ? tabs : [],
-        getElementById: () => null,
+        getElementById: id => id === "theme-select" ? themeSelect : null,
         querySelector: selector => selector === ".tabs" ? element() : elements.get(selector)
       },
       location,
-      localStorage: { getItem() { return null; } },
+      localStorage: { getItem(key) { return storage.get(key); }, setItem(key, value) { storage.set(key, value); } },
       history: { pushState(_state, _title, hash) { location.hash = hash; } },
       window: { addEventListener(name, handler) { events[name] = handler; } }
     };
     vm.runInNewContext(page.match(/<script>([\s\S]*?)<\/script>/)[1], context);
+    assert.equal(themeSelect.value, "woodland", "Restore the saved theme in the selector");
+    assert.equal(context.document.documentElement.attributes["data-theme"], "woodland");
+    for (const [, theme] of themeOptions[0].matchAll(/value="([^"]+)"/g)) {
+      themeSelect.events.change({ target: { value: theme } });
+      assert.equal(context.document.documentElement.attributes["data-theme"], theme);
+      assert.equal(storage.get("adventurer_theme"), theme, "Persist theme changes for the menu and other characters");
+    }
     function selected(index) {
       tabs.forEach((tab, i) => {
         assert.equal(tab.attributes["aria-selected"], String(i === index));
@@ -162,4 +179,4 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"
     selected(0);
   }
 }
-console.log("PASS: all three characters' source/build content, menu portraits, embedded assets, unique IDs, local anchors, recorded HP, tab click, keyboard navigation, and history state.");
+console.log("PASS: all three characters' source/build content, menu portraits, embedded assets, unique IDs, local anchors, recorded HP, overview links, theme selection/persistence, tab click, keyboard navigation, and history state.");
