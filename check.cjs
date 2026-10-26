@@ -48,8 +48,11 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"
     assert.ok(sheet.includes("1 hour asleep and 7 hours of light activity") && sheet.includes("Hibernation is not selected"));
     assert.ok(!/Limit Removal|supplied (?:Thrain |character )?build|take precedence over draft|build overrides?/i.test(allHtml),
       "Only campaign-legal selected mutations and campaign rule precedence may appear");
-    const feats = [...sheet.matchAll(/data-category="(cultural|general)"><details><summary>([^<]+)/g)]
-      .map(([, category, feat]) => [category, feat]);
+    const feats = [...sheet.matchAll(/data-category="(cultural|general)">\s*<details>\s*<summary>([^<]+)<span class="badge gold">([^<]+)<\/span>\s*<\/summary>/g)]
+      .map(([, category, feat, badge]) => {
+        assert.equal(badge.trim(), category === "cultural" ? "Cultural feat" : "General feat");
+        return [category, feat.replace(/\s+/g, " ").trim()];
+      });
     assert.deepEqual(feats, [
       ["cultural", "Dwarf Fortitude · level 1"],
       ["general", "Heavily Armoured · level 1"],
@@ -58,11 +61,15 @@ for (const character of ["finn_wildblade", "thrain_eisenkolben", "valen_ashwood"
       ["general", "Fell-handed · level 7"],
       ["cultural", "Squat Nimbleness · level 9"]
     ]);
-    const abilities = [...sheet.matchAll(/class="ability"><span class="label">(\w+)<\/span><span class="modifier">([^<]+)<\/span><span class="score">(\d+)/g)]
-      .map(([, ability, modifier, score]) => [ability, modifier, Number(score)]);
+    const abilities = [...sheet.matchAll(/class="ability"><span class="label"><abbr title="([^"]+)">(\w+)<\/abbr><\/span><span class="modifier" aria-label="([^"]+)">([^<]+)<\/span><span class="score">(\d+)/g)]
+      .map(([, name, ability, label, modifier, score]) => [ability, modifier, Number(score), name, label]);
     assert.deepEqual(abilities, [
-      ["STR", "+2", 14], ["DEX", "+0", 10], ["CON", "+3", 16],
-      ["INT", "+3", 17], ["WIS", "+1", 13], ["CHA", "−1", 8]
+      ["STR", "+2", 14, "Strength", "Strength modifier plus two"],
+      ["DEX", "+0", 10, "Dexterity", "Dexterity modifier plus zero"],
+      ["CON", "+3", 16, "Constitution", "Constitution modifier plus three"],
+      ["INT", "+3", 17, "Intelligence", "Intelligence modifier plus three"],
+      ["WIS", "+1", 13, "Wisdom", "Wisdom modifier plus one"],
+      ["CHA", "−1", 8, "Charisma", "Charisma modifier minus one"]
     ]);
     for (const value of ["3 / long rest", "DC 15", "8 + PB 4 + INT 3", "Dwarf Fortitude +1 CON",
       "Squat Nimbleness +1 STR", "Perception +8 and Survival +4", "= +11.",
